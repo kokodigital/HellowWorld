@@ -29,6 +29,9 @@
   <icon src="icons/icon.png"/>
   <icon src="icons/icon.png"/>
   <content src="index.html"/>
+   <gap:plugin name="FacebookConnect">
+   <param name="APP_ID" value="123456" />
+ </gap:plugin>
 
   <license>
 Example license (based on MIT License)

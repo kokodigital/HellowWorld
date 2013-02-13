@@ -32,6 +32,9 @@
    <gap:plugin name="FacebookConnect">
    <param name="APP_ID" value="123456" />
  </gap:plugin>
+ 
+ <gap:plugin name="ChildBrowser" /> <!-- latest release -->
+	<gap:plugin name="ChildBrowser" version="~1" /> <!-- for PhoneGap <= 1.4.1 -->
 
   <license>
 Example license (based on MIT License)

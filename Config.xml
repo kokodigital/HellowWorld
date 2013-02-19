@@ -20,7 +20,7 @@
               readonly = "true" />
 
   <description>
-   	A ello world example to test Adobe Phone Gap creation
+   	A hello world example to test Adobe Phone Gap creation
   </description>
 
   <author href  = "http://foo-bar.example.org/"
@@ -29,12 +29,13 @@
   <icon src="icons/icon.png"/>
   <icon src="icons/icon.png"/>
   <content src="index.html"/>
-   <gap:plugin name="FacebookConnect">
+ 
+ <gap:plugin name="FacebookConnect">
    <param name="APP_ID" value="123456" />
  </gap:plugin>
  
  <gap:plugin name="ChildBrowser" /> <!-- latest release -->
-	<gap:plugin name="ChildBrowser" version="~1" /> <!-- for PhoneGap <= 1.4.1 -->
+ <gap:plugin name="ChildBrowser" version="~1" /> <!-- for PhoneGap <= 1.4.1 -->
 
   <license>
 Example license (based on MIT License)

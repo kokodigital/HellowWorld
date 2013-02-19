@@ -19,13 +19,24 @@
 		});
 	});
 
+	  
+            function onBodyLoad()
+            {      
+                document.addEventListener("deviceready", onDeviceReady, false);
+            }
+            function onDeviceReady()
+            {
+                    cb = window.plugins.childBrowser;
+            }
+
+	
  </script>
 </head>
-<body>
+   <body onload="onBodyLoad();">
 <p>Hello World 123</p>
 <p>
-<a href="#" onclick="window.plugins.childBrowser.showWebPage('http://www.google.com',{ showLocationBar: true })">Click here to open Google</a>
-<a href="yahoo.co.uk">test 123</a>
+<a href="#" onclick="cb.showWebPage('http://www.google.com')">Click here to open Google</a>
+
 </p>
 
 										<p>

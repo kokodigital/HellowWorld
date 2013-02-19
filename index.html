@@ -7,13 +7,31 @@
  <script src="cdv-plugin-fb-connect.js"></script>
  <script src="facebook_js_sdk.js"></script>
  <script src="childbrowser.js"></script>
-</head>
+ <script src="/js/jquery-1.9.1.min.js"></script>
+ <script src="/js/jquery.touchSwipe.min.js"></script>
+ <script>
+ 
+	$(function() {	
+		$("#test").swipe( {
+			swipe:function(event, direction, distance, duration, fingerCount) {
+				$("#test").text("You swiped " + direction + " with " + fingerCount + " fingers");
+			},
+			threshold:0,
+			fingers:'all'
+		});
+	});
 
+ </script>
+</head>
 <body>
 <p>Hello World 123</p>
-<p><a href="#" onclick="window.plugins.childBrowser.showWebPage('http://www.google.com',
+<p>
+
+<a href="#" onclick="window.plugins.childBrowser.showWebPage('http://www.google.com',
                                         { showLocationBar: true })">Click here to open Google</a>;</p>
-<p> Another test so Brett can see</p>
-<p>And another one</p>
+
+										<p>
+										<div id="test" style="width:100px;height:100px;border:2px red solid">Swipe me with different combinations of fingers</div>
+										</p>
 </body>
 </html>

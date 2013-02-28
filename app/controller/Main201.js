@@ -34,7 +34,7 @@ Ext.define('MyApp.controller.Main201', {
 		}
 
 		myContainer.animateActiveItem(newIndex, {
-		type : 'flip',
+		type : 'slide',
 		direction : direction
 		});
 

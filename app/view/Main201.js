@@ -18,6 +18,7 @@ Ext.define('MyApp.view.Main201', {
 			xtype : 'toolbar',
 			docked : 'top',
 			title : 'Card Layout',
+			height:'100px',
 			items : [ {
 				text : 'Back',
 				ui : 'back',

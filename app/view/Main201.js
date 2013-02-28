@@ -11,8 +11,7 @@ Ext.define('MyApp.view.Main201', {
 		activeItem : 0,
 		
 	layout : {
-			type : 'card',
-			animation : 'flip'
+			type : 'card'
 		},
 		
 		items : [ {
@@ -34,6 +33,7 @@ Ext.define('MyApp.view.Main201', {
 		}, {
 			html : 'Card 1',
 			style : 'background:url("Simpsons-Sofa.jpg") no-repeat;background-size: 100%;'
+				
 		}, {
 			html : 'Card 2',
 			style : 'background:url("The-Simpsons2.jpg") no-repeat;background-size: 100%;'

@@ -5,7 +5,7 @@ Ext.define('MyApp.controller.Main201', {
             maincontainer: '#mainContainer'
         },
         control: {
-				'#mainContainer toolbar button': {
+				'button': {
 					tap : 'handelNav'
 				}
         }

@@ -30,6 +30,20 @@ Ext.define('MyApp.view.Main201', {
 				text : 'Forward',
 				xtype : 'button'
 			} ]},
+			{
+				xtype : 'toolbar',
+				docked : 'bottom',
+				title : 'Card Layout',
+				height : '100px',
+				items : [ {
+					text : 'Back',
+					xtype : 'button'
+				}, {
+					xtype : 'spacer'
+				}, {
+					text : 'Forward',
+					xtype : 'button'
+				} ]},
 		{
 			html : 'Card 1',
 			style : 'background:#660000'// url("Simpsons-Sofa.jpg")

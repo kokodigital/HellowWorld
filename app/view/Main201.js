@@ -19,6 +19,7 @@ Ext.define('MyApp.view.Main201', {
 			docked : 'top',
 			title : 'Card Layout',
 			height:'100px',
+			style: 'z-index: 6000;background:#66ff00',
 			items : [ {
 				text : 'Back',
 				xtype :'button'

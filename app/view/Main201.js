@@ -13,13 +13,21 @@ Ext.define('MyApp.view.Main201', {
 	layout : {
 			type : 'card'
 		},
-		
-		items : [ {
-			xtype : 'toolbar',
+		items : [ { 
+			html : 'Card 1',
+			style : 'background:#660000'//url("Simpsons-Sofa.jpg") no-repeat;background-size: 100%;'	
+		}, {
+			html : 'Card 2',
+			style : 'background:#006600'//url("The-Simpsons2.jpg") no-repeat;background-size: 100%;'	
+		}, {
+			html : 'Card 3',
+			style : 'background:#000066'//'url("The-Simpsons1.jpg") no-repeat;background-size: 100%;'
+		},
+	
+			{xtype : 'toolbar',
 			docked : 'top',
 			title : 'Card Layout',
 			height:'100px',
-			style: 'z-index: 6000;background:#66ff00',
 			items : [ {
 				text : 'Back',
 				xtype :'button'
@@ -30,15 +38,6 @@ Ext.define('MyApp.view.Main201', {
 				xtype :'button'
 			} ]
 			
-		}, {
-			html : 'Card 1',
-			style : 'background:#660000'//url("Simpsons-Sofa.jpg") no-repeat;background-size: 100%;'	
-		}, {
-			html : 'Card 2',
-			style : 'background:#006600'//url("The-Simpsons2.jpg") no-repeat;background-size: 100%;'	
-		}, {
-			html : 'Card 3',
-			style : 'background:#000066'//'url("The-Simpsons1.jpg") no-repeat;background-size: 100%;'
-		} ]
+		}]
 	}
 });

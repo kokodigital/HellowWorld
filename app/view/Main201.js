@@ -16,28 +16,25 @@ Ext.define('MyApp.view.Main201', {
 		
 		items : [ {
 			xtype : 'toolbar',
-			docked : 'top',
+			docked : 'bottom',
 			title : 'Card Layout',
 			height:'100px',
 			items : [ {
 				text : 'Back',
-				ui : 'back',
-				xtype:'button'
+				xtype :'button'
 			}, {
 				xtype : 'spacer'
 			}, {
 				text : 'Forward',
-				ui : 'forward',
-				xtype:'button'
+				xtype :'button'
 			} ]
 			
 		}, {
 			html : 'Card 1',
-			style : 'background:url("Simpsons-Sofa.jpg") no-repeat;background-size: 100%;'
-				
+			style : 'background:url("Simpsons-Sofa.jpg") no-repeat;background-size: 100%;'	
 		}, {
 			html : 'Card 2',
-			style : 'background:url("The-Simpsons2.jpg") no-repeat;background-size: 100%;'
+			style : 'background:url("The-Simpsons2.jpg") no-repeat;background-size: 100%;'	
 		}, {
 			html : 'Card 3',
 			style : 'background:url("The-Simpsons1.jpg") no-repeat;background-size: 100%;'

@@ -2,10 +2,10 @@ Ext.define('MyApp.controller.Main201', {
     extend: 'Ext.app.Controller',
     config: {
         refs: {
-            maincontainer: '#mainContainer'
+            maincontainer: '#mainContainer',
         },
         control: {
-				'button': {
+				'#mainContainer toolbar button': {
 					tap : 'handelNav'
 				}
         }
@@ -15,22 +15,22 @@ Ext.define('MyApp.controller.Main201', {
 	
 	    var myContainer = this.getMaincontainer();
 		
-		var // currentContainer = myContainer.getActiveItem(),
-			// innerItems = myContainer.getInnerItems(),
-			// totalItems = innerItems.length,
-			// currentIndex = innerItems.indexOf(currentContainer),
+		var currentContainer = myContainer.getActiveItem(),
+			innerItems = myContainer.getInnerItems(),
+			totalItems = innerItems.length,
+			currentIndex = innerItems.indexOf(currentContainer),
 			direction,
 			newIndex;
 	
 		if (btn.getText() == 'Back') { 
 			direction = 'right';
-			newIndex = 1;// currentIndex > 0 ? (currentIndex - 1) :
-							// (totalItems - 1);
+			newIndex = currentIndex > 0 ? (currentIndex - 1) :
+							 (totalItems - 1);
 		}
 		else {
 				direction = 'left';
-				newIndex = 0;// currentIndex < (totalItems - 1) ?
-								// (currentIndex + 1) : 0;
+				newIndex =  currentIndex < (totalItems - 1) ?
+						  (currentIndex + 1) : 0;
 		}
 
 		myContainer.animateActiveItem(newIndex, {

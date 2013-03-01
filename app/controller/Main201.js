@@ -37,6 +37,5 @@ Ext.define('MyApp.controller.Main201', {
 		type : 'flip',
 		direction : direction
 		});
-
     }
 });

@@ -4,7 +4,10 @@ Ext.define('MyApp.view.Main202', {
 	config : {
 		itemId : 'mainContainer',
 		layout : 'vbox',
-	
+	defaults : {
+		width : '100%',
+		flex : 1
+		},
 		items : [ {
 			itemId : 'cardContainer',
 			layout : {

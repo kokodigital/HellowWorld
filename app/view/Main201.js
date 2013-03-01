@@ -1,5 +1,5 @@
 Ext.define('MyApp.view.Main201', {
-	extend : 'Ext.Container',
+	extend : 'Ext.Panel',
 	fullscreen : true,
 
 	defaults : {
@@ -9,11 +9,11 @@ Ext.define('MyApp.view.Main201', {
 	config : {
 		itemId : 'mainContainer',
 		layout : 'card',
+		activeItem: 0,
 		animation : {
 			type : 'flip',
 			direction : 'left',
 			duration : 300
-
 		},
 
 		items : [ {
@@ -46,14 +46,17 @@ Ext.define('MyApp.view.Main201', {
 				} ]},
 		{
 			html : 'Card 1',
+			xtype: 'panel',
 			style : 'background:#660000'// url("Simpsons-Sofa.jpg")
 		// no-repeat;background-size: 100%;'
 		}, {
 			html : 'Card 2',
+		  xtype: 'panel',
 			style : 'background:#006600'// url("The-Simpsons2.jpg")
 		// no-repeat;background-size: 100%;'
 		}, {
 			html : 'Card 3',
+			xtype: 'panel',
 			style : 'background:#000066'// 'url("The-Simpsons1.jpg")
 		// no-repeat;background-size: 100%;'
 		}

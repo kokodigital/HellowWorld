@@ -1,9 +1,12 @@
 //<debug>
 Ext.Loader.setPath({
     'Ext': 'touch/src',
-    'NotesApp': 'app'
+    'NotesApp': 'app',
+	'Sqlite': 'js/sqlite'
 });
 //</debug>
+
+Ext.require('NotesApp.util.InitSQLite');
 
 Ext.application({
     name: 'NotesApp',
@@ -35,6 +38,11 @@ Ext.application({
         '1496x2048': 'resources/startup/1496x2048.png'
     },
 
+	 onReady: function() {
+      NotesApp.util.InitSQLite.initDb();
+    },
+	
+	
     launch: function() {
         // Destroy the #appLoadingIndicator element
         Ext.fly('appLoadingIndicator').destroy();
@@ -47,8 +55,6 @@ Ext.application({
         };
 
         Ext.Viewport.add([notesListContainer,noteEditor]);
-        
-        
 
 
         console.log("app js launch");

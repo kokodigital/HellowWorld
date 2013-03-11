@@ -31,11 +31,10 @@ Ext.define("NotesApp.controller.Notes", {
 		console.log("onNewNoteCommand");
 
 		var now = new Date();
-		var noteId = (now.getTime()).toString()
-				+ (this.getRandomInt(0, 100)).toString();
+		//var noteId = (now.getTime()).toString()
+		//		+ (this.getRandomInt(0, 100)).toString();
 
 		var newNote = Ext.create("NotesApp.model.Note", {
-			id : noteId,
 			dateCreated : now,
 			title : "",
 			narrative : ""

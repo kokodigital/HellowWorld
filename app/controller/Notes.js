@@ -4,7 +4,8 @@ Ext.define("NotesApp.controller.Notes", {
 		refs : {
 			// We're going to lookup our views by xtype.
 			notesListContainer : "noteslistcontainer",
-			noteEditor : "noteeditor"
+			noteEditor : "noteeditor",
+			notesList :"noteslist"
 
 		},
 		control : {
@@ -92,7 +93,7 @@ Ext.define("NotesApp.controller.Notes", {
 
 		var notesStore = Ext.getStore("Notes");
 
-		if (null == notesStore.findRecord('id', currentNote.data.id)) {
+		if (currentNote.phantom) {
 			notesStore.add(currentNote);
 		}
 
@@ -107,9 +108,22 @@ Ext.define("NotesApp.controller.Notes", {
 	},
 
 	activateNotesList : function() {
-		Ext.getStore("Notes").load();
-		Ext.Viewport.animateActiveItem(this.getNotesListContainer(),
-				this.slideRightTransition);
+		var store = Ext.getStore("Notes");
+		var noteslist = this.getNotesList();
+		
+		Ext.Viewport.animateActiveItem(this.getNotesListContainer(),{
+			type : 'slide',
+			direction : 'right',
+		    listeners: {
+		        animationend: function() {
+		        	console.log("animation finshed");
+		        	noteslist.refresh();
+		        }
+		    }
+		});		
+
+
+
 	},
 	
 	onDeleteNoteCommand : function() {

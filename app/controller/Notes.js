@@ -110,8 +110,6 @@ Ext.define("NotesApp.controller.Notes", {
 	activateNotesList : function() {
 		var store = Ext.getStore("Notes");
 		var noteslist = this.getNotesList();
-		
-		
 		Ext.Viewport.animateActiveItem(this.getNotesListContainer(),this.slideRightTransition);		
 
 		noteslist.refresh();

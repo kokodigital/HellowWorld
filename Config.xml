@@ -18,5 +18,5 @@
        Koko Digital
     </author>
 	<gap:plugin name="ChildBrowser" version="~4"/> 
-	<icon src="icon.png" />
+	<gap:splash src="splash.png" />
 </widget>

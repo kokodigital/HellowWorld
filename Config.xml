@@ -8,6 +8,7 @@
     <!-- versionCode is optional and Android only -->
 	<preference name="show-splash-screen-spinner" value="false" />
 	<preference name="auto-hide-splash-screen" value="false" />
+	<preference name="splash-screen-duration" value="10000" />
 	
     <name>Notes App</name>
 

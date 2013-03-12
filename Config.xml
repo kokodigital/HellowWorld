@@ -17,4 +17,5 @@
        Koko Digital
     </author>
 	<gap:plugin name="ChildBrowser" version="~4"/> 
+	<preference name="show-splash-screen-spinner" value="false" />
 </widget>

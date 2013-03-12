@@ -111,18 +111,10 @@ Ext.define("NotesApp.controller.Notes", {
 		var store = Ext.getStore("Notes");
 		var noteslist = this.getNotesList();
 		
-		Ext.Viewport.animateActiveItem(this.getNotesListContainer(),{
-			type : 'slide',
-			direction : 'right',
-		    listeners: {
-		        animationend: function() {
-		        	console.log("animation finshed");
-		        	noteslist.refresh();
-		        }
-		    }
-		});		
+		
+		Ext.Viewport.animateActiveItem(this.getNotesListContainer(),this.slideRightTransition);		
 
-
+		noteslist.refresh();
 
 	},
 	

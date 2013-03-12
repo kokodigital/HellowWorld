@@ -136,6 +136,11 @@ Ext.define("NotesApp.controller.Notes", {
 
 		notesStore.remove(currentNote);
 		notesStore.sync();
+		
+		notesStore.sort([ {
+			property : 'dateCreated',
+			direction : 'DESC'
+		} ]);
 
 		this.activateNotesList();
 	},

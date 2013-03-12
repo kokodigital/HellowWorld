@@ -45,7 +45,7 @@ Ext.application({
 	
     launch: function() {
         // Destroy the #appLoadingIndicator element
-        Ext.fly('appLoadingIndicator').destroy();
+       Ext.fly('appLoadingIndicator').destroy();
 
         var notesListContainer = {
             xtype: "noteslistcontainer"
@@ -58,6 +58,7 @@ Ext.application({
 
 
         console.log("app js launch");
+        cordova.exec(null, null, "SplashScreen", "hide", []);
     },
 
     onUpdated: function() {

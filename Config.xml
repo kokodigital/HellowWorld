@@ -11,12 +11,12 @@
     <name>Notes App</name>
 
     <description>
-       
+       efsdfsdf
     </description>
 
     <author href="https://build.phonegap.com" email="support@phonegap.com">
        Koko Digital
     </author>
 	<gap:plugin name="ChildBrowser" version="~4"/> 
-
+	<icon src="icon.png" />
 </widget>

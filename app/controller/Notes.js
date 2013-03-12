@@ -50,7 +50,9 @@ Ext.define("NotesApp.controller.Notes", {
 	activateNoteEditor : function(record) {
 		var noteEditor = this.getNoteEditor();
 		noteEditor.setRecord(record); // load() is deprecated.
+		this.hideKeyboard();
 		Ext.Viewport.animateActiveItem(noteEditor, this.slideLeftTransition);
+		
 	},
 
 	slideLeftTransition : {
@@ -136,6 +138,17 @@ Ext.define("NotesApp.controller.Notes", {
 	},
 	onBackToHomeCommand : function(){
 		this.activateNotesList();
+	},
+	
+	hideKeyboard: function (){
+	     var activeElement = document.activeElement;
+	     activeElement.setAttribute('readonly', 'readonly'); 
+	     activeElement.setAttribute('disabled', 'true');
+	     Ext.defer(function() {
+	         activeElement.blur();
+	         activeElement.removeAttribute('readonly');
+	         activeElement.removeAttribute('disabled');
+	     }, 100);
 	},
 	
 

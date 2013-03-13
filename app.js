@@ -55,9 +55,11 @@ Ext.application({
         var noteEditor = {
             xtype: "noteeditor"
         };
+        
+       
 
         Ext.Viewport.add([notesListContainer,noteEditor]);
-
+       
 
         console.log("app js launch");
         cordova.exec(null, null, "SplashScreen", "hide", []);// hide phonegap splash screen as all content is loaded

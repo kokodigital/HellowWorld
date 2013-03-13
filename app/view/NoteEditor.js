@@ -53,16 +53,14 @@ Ext.define("NotesApp.view.NoteEditor", {
 			xtype : 'textfield',
 			name : 'title',
 			label : 'Title',
-			required : true,
-			isFocused: false
+			required : true
 			
 		};
 
 		var noteNarrativeEditor = {
 			xtype : 'textareafield',
 			name : 'narrative',
-			label : 'Narrative',
-			isFocused: false
+			label : 'Narrative'
 		};
 
 		this.add([ topToolbar, {

@@ -52,7 +52,7 @@ Ext.define("NotesApp.controller.Notes", {
 	
 		var noteEditor = this.getNoteEditor();
 		//console.log(noteEditor.disable());
-		noteEditor.disable();
+		//noteEditor.disable();
 		
 		noteEditor.setRecord(record); // load() is deprecated.
 		Ext.Viewport.animateActiveItem(noteEditor, this.slideLeftTransition);

@@ -30,6 +30,10 @@ Ext.define("NotesApp.view.NotesListContainer", {
 				disclose : {
 					fn : this.onNotesListDisclose,
 					scope : this
+				},
+				itemtap : {
+					fn : this.onNotesListItemTap,
+					scope : this
 				}
 			}
 
@@ -47,10 +51,15 @@ Ext.define("NotesApp.view.NotesListContainer", {
 	    this.fireEvent('editNoteCommand', this, record);
 	},
 	
-
+	onNotesListItemTap: function (list, index, target, record, evt, options ){
+		 console.log("editNoteCommand");
+		 this.fireEvent('editNoteCommand', this, record);
+	},
 	config : {
 		layout : {
+			fullscreen: true,
 			type : 'fit'
+				
 		}
 	}
 });

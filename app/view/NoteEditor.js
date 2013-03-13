@@ -3,7 +3,8 @@ Ext.define("NotesApp.view.NoteEditor", {
 	requires : [ "Ext.form.FieldSet" ],
 	alias : "widget.noteeditor",
 	config : {
-		scrollable : 'vertical'
+		scrollable : 'vertical',
+			fullscreen: true
 	},
 	initialize : function() {
 

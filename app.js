@@ -59,6 +59,7 @@ Ext.application({
        
 
         Ext.Viewport.add([notesListContainer,noteEditor]);
+        Ext.Viewport.setActiveItem(notesListContainer);
        
 
         console.log("app js launch");

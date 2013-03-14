@@ -39,12 +39,10 @@
      *      }
      */
     "js": [
-        {
-            "path": "touch/sencha-touch-all.js",
-			"path": "phonegap.js",
-			"path": "childbrowser.js"
-            //"x-bootstrap": true
-        },
+        
+            {"path": "touch/sencha-touch-all.js"},
+			{"path": "phonegap.js"},
+			{"path": "childbrowser.js"},
         {
             "path": "app.js",
             "bundle": true,  /* Indicates that all class dependencies are concatenated into this file when build */

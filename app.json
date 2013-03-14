@@ -41,6 +41,8 @@
     "js": [
         {
             "path": "touch/sencha-touch-all.js",
+			"path": "phonegap.js",
+			"path": "childbrowser.js"
             //"x-bootstrap": true
         },
         {

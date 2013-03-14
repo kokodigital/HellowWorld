@@ -11,25 +11,12 @@ Ext.require('NotesApp.util.InitSQLite');
 Ext.application({
     name: 'NotesApp',
 
-    requires: [
-        'Ext.MessageBox'
-    ],
+  //  requires: [
+  //      'Ext.MessageBox'
+  //  ],
     
-    models: ['Note'],
-    stores:['Notes'],
-    controllers: ['Notes'],
-    views: ['NotesList','NotesListContainer','NoteEditor'],
 
-    icon: {
-        '57': 'resources/icons/Icon.png',
-        '72': 'resources/icons/Icon~ipad.png',
-        '114': 'resources/icons/Icon@2x.png',
-        '144': 'resources/icons/Icon~ipad@2x.png'
-    },
-
-    isIconPrecomposed: true,
-
-    startupImage: {
+ startupImage: {
         '320x460': 'resources/startup/320x460.jpg',
         '640x920': 'resources/startup/640x920.png',
         '768x1004': 'resources/startup/768x1004.png',
@@ -37,18 +24,33 @@ Ext.application({
         '1536x2008': 'resources/startup/1536x2008.png',
         '1496x2048': 'resources/startup/1496x2048.png'
     },
+    
+    isIconPrecomposed: true,
+    
+    icon: {
+        '57': 'resources/icons/Icon.png',
+        '72': 'resources/icons/Icon~ipad.png',
+        '114': 'resources/icons/Icon@2x.png',
+        '144': 'resources/icons/Icon~ipad@2x.png'
+    },
+    
+	views: ['NotesList','NotesListContainer','NoteEditor'], 
+	stores:['Notes'],
+	models: ['Note'],
+	controllers: ['Notes'],
+
+
 
 	 onReady: function() {
-      NotesApp.util.InitSQLite.initDb();
-      
+    	NotesApp.util.InitSQLite.initDb();
       
     },
 	
 	
     launch: function() {
         // Destroy the #appLoadingIndicator element
-      // Ext.fly('appLoadingIndicator').destroy();
-
+       Ext.fly('appLoadingIndicator').destroy();
+       console.log("app js launch");
         var notesListContainer = {
             xtype: "noteslistcontainer"
         };
@@ -56,16 +58,16 @@ Ext.application({
             xtype: "noteeditor"
         };
         
-       
 
         Ext.Viewport.add([notesListContainer,noteEditor]);
-        Ext.Viewport.setActiveItem(notesListContainer);
+       
        
 
-        console.log("app js launch");
-        cordova.exec(null, null, "SplashScreen", "hide", []);// hide phonegap splash screen as all content is loaded
+        //console.log("app js launch");
+        //cordova.exec(null, null, "SplashScreen", "hide", []);// hide phonegap splash screen as all content is loaded
         
-    },
+    }
+/*,
 
     onUpdated: function() {
         Ext.Msg.confirm(
@@ -77,5 +79,5 @@ Ext.application({
                 }
             }
         );
-    }
+    }*/
 });

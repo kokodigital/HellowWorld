@@ -23,7 +23,7 @@
         }
     }
 });
- */
+*/
 
 Ext.define('NotesApp.store.Notes', {
 

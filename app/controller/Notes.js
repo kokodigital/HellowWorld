@@ -55,6 +55,8 @@ Ext.define("NotesApp.controller.Notes", {
 		//noteEditor.disable();
 		
 		noteEditor.setRecord(record); // load() is deprecated.
+		
+		// Ext.Viewport.setActiveItem(noteEditor);
 		Ext.Viewport.animateActiveItem(noteEditor, this.slideLeftTransition);
 		//noteEditor.enable();
 		
@@ -118,8 +120,8 @@ Ext.define("NotesApp.controller.Notes", {
 	activateNotesList : function() {
 		var store = Ext.getStore("Notes");
 		var noteslist = this.getNotesList();
-		Ext.Viewport.animateActiveItem(this.getNotesListContainer(),this.slideRightTransition);		
-
+		//Ext.Viewport.animateActiveItem(this.getNotesListContainer(),this.slideRightTransition);		
+		Ext.Viewport.setActiveItem(this.getNotesListContainer());
 		noteslist.refresh();
 
 	},
@@ -142,6 +144,8 @@ Ext.define("NotesApp.controller.Notes", {
 
 		this.activateNotesList();
 	},
+	
+	
 	onBackToHomeCommand : function(){
 		this.activateNotesList();
 	},

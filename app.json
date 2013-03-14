@@ -2,7 +2,7 @@
     /**
      * The application's namespace, used by Sencha Command to generate classes
      */
-    "name": "QM",
+    "name": "NotesApp",
 
     /**
      * The file path to this application's front HTML document, relative to this app.json file
@@ -40,8 +40,8 @@
      */
     "js": [
         {
-            "path": "touch/sencha-touch.js",
-            "x-bootstrap": true
+            "path": "touch/sencha-touch-all.js",
+            //"x-bootstrap": true
         },
         {
             "path": "app.js",
@@ -116,10 +116,18 @@
      * must be kept intact for proper generation of deltas between updates
      */
     "archivePath": "archive",
+    
+   "buildOptions": {
+        "product": "touch",
+        "minVersion": 3,
+        "debug": false,
+        "logger": "no"
+    },
+
 
     /**
      * Uniquely generated id for this application, used as prefix for localStorage keys.
      * Normally you should never change this value.
      */
-    "id": "a7a74798-c81a-4ba9-95f1-5979069bc689"
+    "id": "9e5841e3-6e3b-4c9c-baea-b495b2605cca"
 }

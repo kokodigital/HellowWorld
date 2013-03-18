@@ -6,9 +6,9 @@
         version   = "1.0.3">
 
     <!-- versionCode is optional and Android only -->
-	<preference name="auto-hide-splash-screen" value="false" />
+	<!--preference name="auto-hide-splash-screen" value="false"-->
 	
-    <name>Notes App</name>
+    <name>WineApp</name>
 
     <description>
        efsdfsdf

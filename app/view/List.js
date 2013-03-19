@@ -17,15 +17,17 @@ Ext.define('Kitchensink.view.List', {
         },
         items: [{
             title: 'Simple',
-            layout: Ext.os.deviceType == 'Phone' ? 'fit' : {
+			layout:'fit',
+           /* layout: Ext.os.deviceType == 'Phone' ? 'fit' : {
                 type: 'vbox',
                 align: 'center',
                 pack: 'center'
-            },
+            },*/
+			
             cls: 'demo-list',
             items: [{
-                width: Ext.os.deviceType == 'Phone' ? null : 300,
-                height: Ext.os.deviceType == 'Phone' ? null : 500,
+             //   width: Ext.os.deviceType == 'Phone' ? null : 300,
+             //   height: Ext.os.deviceType == 'Phone' ? null : 500,
                 xtype: 'list',
                 store: 'List',
                 itemTpl: '<div class="contact"><strong>{firstName}</strong> {lastName}</div>',
@@ -33,15 +35,16 @@ Ext.define('Kitchensink.view.List', {
             }]
         }, {
             title: 'Grouped',
-            layout: Ext.os.deviceType == 'Phone' ? 'fit' : {
+			layout:'fit',
+           /* layout: Ext.os.deviceType == 'Phone' ? 'fit' : {
                 type: 'vbox',
                 align: 'center',
                 pack: 'center'
-            },
+            },*/
             cls: 'demo-list',
             items: [{
-                width: Ext.os.deviceType == 'Phone' ? null : 300,
-                height: Ext.os.deviceType == 'Phone' ? null : 500,
+               // width: Ext.os.deviceType == 'Phone' ? null : 300,
+              //  height: Ext.os.deviceType == 'Phone' ? null : 500,
                 xtype: 'list',
                 store: 'List',
                 itemTpl: '<div class="contact"><strong>{firstName}</strong> {lastName}</div>',
@@ -52,15 +55,16 @@ Ext.define('Kitchensink.view.List', {
             }]
         }, {
             title: 'Disclosure',
-            layout: Ext.os.deviceType == 'Phone' ? 'fit' : {
+			layout:'fit',
+           /*layout: Ext.os.deviceType == 'Phone' ? 'fit' : {
                 type: 'vbox',
                 align: 'center',
                 pack: 'center'
-            },
+            },*/
             cls: 'demo-list',
             items: [{
-                width: Ext.os.deviceType == 'Phone' ? null : 300,
-                height: Ext.os.deviceType == 'Phone' ? null : 500,
+                //width: Ext.os.deviceType == 'Phone' ? null : 300,
+               // height: Ext.os.deviceType == 'Phone' ? null : 500,
                 xtype: 'list',
                 pinHeaders: false,
                 onItemDisclosure: function(record, btn, index) {

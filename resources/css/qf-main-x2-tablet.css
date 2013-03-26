@@ -130,7 +130,7 @@ body{
   padding:0px !important;
 }
 
-#mainBottomNav .selected, .x-button.x-button-pressing.bottomBtn {
+#mainBottomNav .bottomBtn.selected, .x-button.x-button-pressing.bottomBtn {
 background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cbbba7),
 		color-stop(100%, #816e58) ) !important;
    background-image: -webkit-linear-gradient(top, #cbbba7, #816e58) !important; 

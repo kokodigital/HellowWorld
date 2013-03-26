@@ -15,7 +15,8 @@ Ext.define('QF.view.phone.MainBottomNav', {
 			cls : 'bottomBtn selected',
 			minWidth : '76px',
 			iconCls : 'challengeIcon',
-			flex : 1
+			flex : 1,
+			pressedDelay:0
 
 		}, {
 			xtype : 'button',
@@ -25,7 +26,8 @@ Ext.define('QF.view.phone.MainBottomNav', {
 			cls : 'bottomBtn',
 			minWidth : '76px',
 			iconCls : 'soloIcon',
-			flex : 1
+			flex : 1,
+			pressedDelay:0
 		}, {
 			xtype : 'button',
 			ui : 'plain',
@@ -34,7 +36,8 @@ Ext.define('QF.view.phone.MainBottomNav', {
 			cls : 'bottomBtn',
 			minWidth : '76px',
 			iconCls : 'dailyIcon',
-			flex : 1
+			flex : 1,
+			pressedDelay:0
 		}, {
 			xtype : 'button',
 			ui : 'plain',
@@ -43,7 +46,8 @@ Ext.define('QF.view.phone.MainBottomNav', {
 			cls : 'bottomBtn',
 			minWidth : '76px',
 			iconCls : 'moreIcon',
-			flex : 1
+			flex : 1,
+			pressedDelay:0
 		}, {
 			xtype : 'spacer'
 		} ]

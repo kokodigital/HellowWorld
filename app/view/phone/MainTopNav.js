@@ -11,7 +11,8 @@ Ext.define('QF.view.phone.MainTopNav', {
 			ui: 'back',
 			text : 'Back',
 			align : 'left',
-			cls:'topBtn'
+			cls:'topBtn',
+			pressedDelay :0
 		}, {
 			xtype : 'spacer'
 		}, {
@@ -30,7 +31,8 @@ Ext.define('QF.view.phone.MainTopNav', {
 			align : 'right',
 			cls:'topBtn',
 			iconAlign: 'right', 
-			iconCls:'powerIcon'
+			iconCls:'powerIcon',
+			pressedDelay :0
 			
 		} ]
 	}

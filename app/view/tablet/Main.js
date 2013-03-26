@@ -1,37 +1,34 @@
-Ext.define('Kitchensink.view.tablet.Main', {
-    extend: 'Ext.dataview.NestedList',
-    requires: ['Ext.TitleBar'],
+Ext.define('QF.view.tablet.Main', {
+		extend : 'Ext.Container',
+		xtype : 'mainview',
+		requires : [ 'QF.view.tablet.MainTopNav', 'QF.view.tablet.MainBottomNav' ],
+		config : {
+			fullscreen : true,
 
-    id: 'mainNestedList',
+			layout : {
+				type : 'card',
+				animation : {
+					type : 'slide',
+					direction : 'left',
+					duration : 250
+				}
+			},
 
-    config: {
-        fullscreen: true,
-        title: 'Kitchen Sink',
-        useTitleAsBackText: false,
-        layout: {
-            animation: {
-                duration: 250,
-                easing: 'ease-in-out'
-            }
-        },
+			items : [ {
+				xtype : 'mainbottomnav-tablet'
 
-        store: 'Demos',
+			},
 
-        toolbar: {
-            id: 'mainNavigationBar',
-            xtype : 'titlebar',
-            docked: 'top',
-            title : 'Kitchen Sink',
+			{
+				id : 'launchscreen',
+				scrollable : true,
+				html : 'test here',
+				flex: 1,
+			},
 
-            items: {
-                xtype : 'button',
-                id: 'viewSourceButton',
-                hidden: true,
-                align : 'right',
-                ui    : 'action',
-                action: 'viewSource',
-                text  : 'Source'
-            }
-        }
-    }
-});
+			{
+				xtype : 'maintopnav-tablet'
+
+			} ]
+		}
+	});

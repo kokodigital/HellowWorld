@@ -1,0 +1,178 @@
+/*### Body, main font etc */
+@font-face {
+    font-family: 'RobotoBold';
+    src: url('../fonts/Roboto-Bold-webfont.eot');
+    src: url('../fonts/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-Bold-webfont.woff') format('woff'),
+         url('../fonts/Roboto-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-Bold-webfont.svg#RobotoBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+/*### Main Top Nav */
+body{
+	
+}
+
+#mainTopNav {
+	font-family: 'RobotoBold';
+	height: 88px;
+	border: none;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #917556),
+	color-stop(100%, #442f1f));
+	background-image: -webkit-linear-gradient(top, #917556, #442f1f);
+	background-image: linear-gradient(top, #917556, #442f1f);
+}
+
+#mainTopNav .x-button-label{
+	font-weight:normal;
+	font-size:30px !important;
+	line-height:0px !important;
+	margin-right: 0px !important;
+	margin-top:4px;
+	overflow:visible;
+}
+
+.x-button.topBtn{
+	height:60px;
+	border: 1px #a08b75 solid !important;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cbbba8),
+	color-stop(100%, #796855)) !important;
+    background-image: -webkit-linear-gradient(top,#cbbba8,#796855) !important;
+	background-image: linear-gradient(top, #cbbba8,#796855)!important;
+    -moz-box-shadow: 1px 1px 1px #3e3e3e;
+	-webkit-box-shadow: 1px 1px 1px #3e3e3e;
+	box-shadow: 1px 1px 1px #3e3e3e;
+}
+
+.x-button.x-button-back.topBtn::before,
+.x-button.x-button-back.topBtn::after {
+	top:-2px;
+	height:63px;
+	width:20px;
+	-webkit-mask-size: 20px 63px;
+	left:-18px !important;
+	background: #a08b75 !important;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cbbba8),
+	color-stop(100%, #796855)) !important;
+    background-image: -webkit-linear-gradient(top,#cbbba8,#796855) !important;
+    background-image: linear-gradient(top, #cbbba8,#796855)!important;
+}
+
+.x-button.x-button-pressing.topBtn{
+	border: 1px #756b5e solid !important;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #49413a),
+	color-stop(100%, #796855)) !important;
+    background-image: -webkit-linear-gradient(top, #49413a, #796855) !important; 
+    background-image: linear-gradient(top, #49413a, #796855)!important;
+}
+
+.x-button.x-button-back.x-button-pressing.topBtn::after,
+.x-button.x-button-back.x-button-pressing.topBtn::before {
+	top:-2px;
+	height:63px;
+	width:20px;
+	-webkit-mask-size: 20px 63px;
+	left:-18px !important;
+ 	background: #756b5e !important;
+ 	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #49413a),
+	color-stop(100%, #796855)) !important;
+    background-image: -webkit-linear-gradient(top, #49413a, #796855) !important; 
+    background-image: linear-gradient(top, #49413a, #796855)!important;
+}
+
+
+#mainTopNav .mainNavLogo {
+	background: url("../images/2xRes/qf_logo_smll.png?v2") no-repeat left
+		top;
+	background-size: 266px 66px;
+}
+
+#mainNavShopButton {
+	padding-right:3px;
+	height:60px;
+}
+
+.powerIcon{
+	background: url("../images/2xRes/power-icon.png") no-repeat left
+		top;
+		height :50px !important;
+		width : 42px !important;
+		background-size: 42px 50px;
+}
+
+
+/*### Main Bottom Nav */
+
+#mainBottomNav {
+	height: 98px;
+	border: none;
+	padding:0px;
+	margin:0px;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #917556),
+		color-stop(100%, #442f1f) );
+	background-image: -webkit-linear-gradient(top, #917556, #442f1f);
+	background-image: linear-gradient(top, #917556, #442f1f);
+}
+
+#mainBottomNav .x-button-label{
+	font-size:18px;
+}
+
+#mainBottomNav .x-button.bottomBtn {
+ display: -webkit-box;
+  display: box;
+  height:90px !important;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  margin:0px 2px !important;
+  padding:0px !important;
+}
+
+#mainBottomNav .selected, .x-button.x-button-pressing.bottomBtn {
+background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cbbba7),
+		color-stop(100%, #816e58) ) !important;
+   background-image: -webkit-linear-gradient(top, #cbbba7, #816e58) !important; 
+   background-image: linear-gradient(top, #cbbba7, #816e58)!important;
+   -moz-box-shadow: 1px 1px 1px #3e3e3e;
+-webkit-box-shadow: 1px 1px 1px #3e3e3e;
+box-shadow: 1px 1px 1px #3e3e3e;
+}
+
+
+
+.challengeIcon{
+		background: url("../images/2xRes/challenge-icon.png") no-repeat left
+		top;
+		height :52px !important;
+		width : 62px !important;
+		background-size: 62px 52px;
+		margin-top:6px;
+}
+.soloIcon{
+		background: url("../images/2xRes/solo-icon.png") no-repeat left
+		top;
+		height :52px !important;
+		width : 38px !important;
+		background-size: 38px 52px;
+		margin-top:6px;
+}
+.dailyIcon{
+		background: url("../images/2xRes/daily-icon.png") no-repeat left
+		top;
+		height :52px !important;
+		width : 38px !important;
+		background-size: 38px 52px;
+		margin-top:6px;
+}
+.moreIcon{
+		background: url("../images/2xRes/more-icon.png") no-repeat left
+		top;
+		height :24px !important;
+		width : 78px !important;
+		background-size: 78px 24px;
+		margin-top:26px;
+		margin-bottom:8px;
+}
+

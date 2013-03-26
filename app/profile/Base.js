@@ -1,7 +1,8 @@
-Ext.define('Kitchensink.profile.Base', {
+Ext.define('QF.profile.Base', {
     extend: 'Ext.app.Profile',
-
+ 
     launch: function() {
+
         var isBenchmarking = window.location.search.match(/(\?|&)bm/);
 
         if (isBenchmarking) {
@@ -21,7 +22,7 @@ Ext.define('Kitchensink.profile.Base', {
 
     onAnimationEnd: function(animator, animation, element) {
         var delay = (Date.now() - animation.startTime) - animation.getDuration(),
-                benchmark = this.benchmark,
+           benchmark = this.benchmark,
                 item;
 
         item = benchmark.add({

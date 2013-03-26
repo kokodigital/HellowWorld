@@ -8,14 +8,14 @@
     <!-- versionCode is optional and Android only -->
 	<!--preference name="auto-hide-splash-screen" value="false"-->
 	
-    <name>WineApp</name>
+    <name>Quiz Factorp</name>
 
     <description>
-       efsdfsdf
+       Quiz Factor
     </description>
 
     <author href="https://build.phonegap.com" email="support@phonegap.com">
        Koko Digital
     </author>
-	<gap:splash src="splash.png" />
+	<!--gap:splash src="splash.png" -->
 </widget>

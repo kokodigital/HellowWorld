@@ -66,7 +66,7 @@
 	}
 
 	function moveDB() {
-		window.resolveLocalFileSystemURI('/assets/test.db', resOnSuccess,
+		window.resolveLocalFileSystemURI('file///assets/test.db', resOnSuccess,
 				resOnError1);
 	}
 
@@ -94,13 +94,12 @@
 
 	function resOnError(entry) {
 
-		alert(entry.code + ' copy error');
+		alert(entry.target.error.code + ' copy error');
 
 	}
 
 	function resOnError1(entry) {
-
-		alert(entry.code + ' locate file');
+		alert(entry.target.error.code + ' locate file');
 
 	}
 

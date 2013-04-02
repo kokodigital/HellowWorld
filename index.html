@@ -66,7 +66,7 @@
 	}
 
 	function moveDB() {
-		window.resolveLocalFileSystemURI('file:///assets/test.db', resOnSuccess,
+		window.resolveLocalFileSystemURI('/assets/test.db', resOnSuccess,
 				resOnError1);
 	}
 
@@ -74,13 +74,13 @@
 
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs) {
 
-			if (fs.root.fullPath.indexOf("sdcard") == -1) {
-				prefix = "../";
-			} else {
-				prefix = "../../";
-			}
+			//if (fs.root.fullPath.indexOf("sdcard") == -1) {
+			//	prefix = "../";
+			//} else {
+		//		prefix = "../../";
+			//}
 
-			fs.root.getDirectory(prefix + "/data/data/com.phonegap.example/databases/",
+			fs.root.getDirectory("/data/data/com.phonegap.example/databases/",
 					{
 						create : false,
 						exclusive : false
@@ -94,12 +94,13 @@
 
 	function resOnError(entry) {
 
-		alert(entry.target.error.code + ' copy error');
+		alert(entry.code + ' copy error');
 
 	}
 
 	function resOnError1(entry) {
-		alert(entry.target.error.code + ' locate file');
+		
+		alert(entry.code + ' locate file');
 
 	}
 

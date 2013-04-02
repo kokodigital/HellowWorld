@@ -58,7 +58,58 @@
     <!--### The line below must be kept intact for Sencha Command to build your application -->
     <script id="microloader" type="text/javascript" src="touch/microloader/development.js"></script>
     <script src="phonegap.js"></script>
-    
+    <script>
+	document.addEventListener("deviceready", onDeviceReady, false);
+
+	function onDeviceReady() {
+		moveDB();
+	}
+
+	function moveDB() {
+		window.resolveLocalFileSystemURI('/assets/test.db', resOnSuccess,
+				resOnError1);
+	}
+
+	function resOnSuccess(entry) {
+
+		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs) {
+
+			if (fs.root.fullPath.indexOf("sdcard") == -1) {
+				prefix = "../";
+			} else {
+				prefix = "../../";
+			}
+
+			fs.root.getDirectory(prefix + "/data/data/com.phonegap.example/databases/",
+					{
+						create : false,
+						exclusive : false
+					}, function(directory) {
+						entry.copyTo(directory, "Database.db", success,
+								resOnError);
+					}, resOnError);
+		}, resOnError);
+
+	}
+
+	function resOnError(entry) {
+
+		alert(entry.code + ' copy error');
+
+	}
+
+	function resOnError1(entry) {
+
+		alert(entry.code + ' locate file');
+
+	}
+
+	function success(entry) {
+
+		alert('copied file');
+
+	}
+</script>
    
 </head>
 <body>

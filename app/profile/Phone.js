@@ -3,11 +3,11 @@ Ext.define('QF.profile.Phone', {
 
     config: {
         controllers: ['Main'],
-        views: ['Main']
+        views: ['Main','Connect','Home','Challenges','SoloQuest','DailyFriends','Shop','Settings']
     },
 
     isActive: function() {
-        return Ext.os.is.Phone; //|| Ext.os.is.Desktop;
+        return Ext.os.is.Phone || Ext.os.is.Desktop;
     },
 
     launch: function() {

@@ -1,6 +1,7 @@
 Ext.define('QF.view.phone.Main', {
 	extend : 'Ext.Container',
 	xtype : 'mainview',
+	id : 'mainview',
 	requires : [ 'QF.view.phone.MainTopNav', 'QF.view.phone.MainBottomNav' ],
 	config : {
 		fullscreen : true,
@@ -15,19 +16,19 @@ Ext.define('QF.view.phone.Main', {
 		},
 
 		items : [ {
-			xtype : 'mainbottomnav-phone'
-	
+			xtype : 'maintopnav-phone',
+			hidden : true
+
 		},
 
 		{
-			id : 'launchscreen',
-			scrollable : true,
-			html : 'test here',
-			flex:1	
+			xtype : 'connectview',
+			flex : 1
 		},
 
 		{
-			xtype : 'maintopnav-phone'
+			xtype : 'mainbottomnav-phone',
+			hidden : true
 
 		} ]
 	}

@@ -9,45 +9,32 @@ Ext.define('QF.view.phone.MainBottomNav', {
 			xtype : 'spacer'
 		}, {
 			xtype : 'button',
-			ui : 'plain',
-			id : 'mainNavChallengeFriends',
-			text : 'Challenges',
-			cls : 'bottomBtn selected',
-			minWidth : '76px',
-			iconCls : 'challengeIcon',
-			flex : 1,
-			pressedDelay:0
+			ui:'plain',
+			id : 'mainNavHome',
+			iconCls : 'home',
+			iconMask: true,
+			width:'50px',
+			cls : 'bottomBtn',
+			listeners : {
+				tap : function(e) {
+					this.fireEvent('loadViewEvent', this,'Home', true, true,[true,false],[false, false]);
+				}
+			}
+		}, {
 
-		}, {
 			xtype : 'button',
-			ui : 'plain',
-			id : 'mainNavSoloQuest',
-			text : 'Solo Quest',
+			ui:'plain',
+			id : 'mainNavSettings',
+			iconCls : 'settings',
+			iconMask: true,
+			width:'50px',
 			cls : 'bottomBtn',
-			minWidth : '76px',
-			iconCls : 'soloIcon',
-			flex : 1,
-			pressedDelay:0
-		}, {
-			xtype : 'button',
-			ui : 'plain',
-			id : 'mainNavDailyChallenge',
-			text : 'Daily Friends',
-			cls : 'bottomBtn',
-			minWidth : '76px',
-			iconCls : 'dailyIcon',
-			flex : 1,
-			pressedDelay:0
-		}, {
-			xtype : 'button',
-			ui : 'plain',
-			id : 'mainNavMore',
-			text : 'More',
-			cls : 'bottomBtn',
-			minWidth : '76px',
-			iconCls : 'moreIcon',
-			flex : 1,
-			pressedDelay:0
+			listeners : {
+				tap : function(e) {
+					this.fireEvent('loadViewEvent', this,'Settings',false, true,[false,true],[true,true]);
+				}
+			}
+
 		}, {
 			xtype : 'spacer'
 		} ]

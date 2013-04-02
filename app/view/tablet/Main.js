@@ -1,6 +1,7 @@
 Ext.define('QF.view.tablet.Main', {
 		extend : 'Ext.Container',
 		xtype : 'mainview',
+		id : 'mainview',
 		requires : [ 'QF.view.tablet.MainTopNav', 'QF.view.tablet.MainBottomNav' ],
 		config : {
 			fullscreen : true,
@@ -20,10 +21,8 @@ Ext.define('QF.view.tablet.Main', {
 			},
 
 			{
-				id : 'launchscreen',
-				scrollable : true,
-				html : 'test here',
-				flex: 1,
+			xtype : 'connectview',
+			flex : 1
 			},
 
 			{

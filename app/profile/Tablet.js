@@ -4,12 +4,12 @@ Ext.define('QF.profile.Tablet', {
 	config : {
 
 		controllers : [ 'Main' ],
-		views : [ 'Main' ]
+		views: ['Main','Connect','Home','Challenges','SoloQuest','DailyFriends']
 	
 	},
 
 	isActive : function() {
-		return Ext.os.is.Tablet || Ext.os.is.Desktop;
+		return Ext.os.is.Tablet ;//|| Ext.os.is.Desktop;
 	},
 
 	launch : function() {

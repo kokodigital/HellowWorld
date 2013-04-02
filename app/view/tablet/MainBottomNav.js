@@ -1,6 +1,5 @@
 Ext.define('QF.view.tablet.MainBottomNav', {
 	extend : 'Ext.Toolbar',
-	requires:['QF.components.Buttons'],
 	xtype : 'mainbottomnav-tablet',
 	config : {
 		docked : 'bottom',
@@ -20,11 +19,13 @@ Ext.define('QF.view.tablet.MainBottomNav', {
 			pressedDelay : 0,
 			listeners : {
 				tap : function(e) {
-					Ext.getCmp('launchscreen').setHtml('<h1>Challenges</h1>');
+					this.fireEvent('loadViewEvent', this);
+					this.fireEvent('pressStateEvent', this);
 				}
 			}
 		}, {
-			xtype : 'testbutton',
+
+			xtype : 'button',
 			ui : 'plain',
 			id : 'mainNavSoloQuest',
 			text : 'Solo Quest',
@@ -35,11 +36,11 @@ Ext.define('QF.view.tablet.MainBottomNav', {
 			pressedDelay : 0,
 			listeners : {
 				tap : function(e) {
-				this.pressed(e);
-				
-				Ext.getCmp('launchscreen').setHtml('<h1>Solo</h1>');
+					this.fireEvent('loadViewEvent', this);
+					this.fireEvent('pressStateEvent', this);
 				}
 			}
+
 		}, {
 			xtype : 'button',
 			ui : 'plain',
@@ -52,7 +53,8 @@ Ext.define('QF.view.tablet.MainBottomNav', {
 			pressedDelay : 0,
 			listeners : {
 				tap : function(e) {
-					Ext.getCmp('launchscreen').setHtml('<h1>Daily</h1>');
+					this.fireEvent('loadViewEvent', this);
+					this.fireEvent('pressStateEvent', this);
 				}
 			}
 		}, {
@@ -67,7 +69,8 @@ Ext.define('QF.view.tablet.MainBottomNav', {
 			pressedDelay : 0,
 			listeners : {
 				tap : function(e) {
-					Ext.getCmp('launchscreen').setHtml('<h1>More</h1>');
+					this.fireEvent('loadViewEvent', this);
+					this.fireEvent('pressStateEvent', this);
 				}
 			}
 		}, {

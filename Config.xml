@@ -18,4 +18,5 @@
        Koko Digital
     </author>
 	<!--gap:splash src="splash.png" -->
+	<feature name="http://api.phonegap.com/1.0/file"/>
 </widget>

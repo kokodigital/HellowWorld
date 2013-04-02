@@ -10,8 +10,7 @@ Ext.application({
     retina:'',
     
     requires: [
-        'Ext.MessageBox','QF.view.tablet.MainTopNav'
-    ],
+        'Ext.MessageBox'],
 
    
 
@@ -32,9 +31,8 @@ Ext.application({
         '1536x2008': 'resources/startup/1536x2008.png',
         '1496x2048': 'resources/startup/1496x2048.png'
     },
-
-
-    profiles: ['Tablet','Phone']
-    // launch main correct view for particalr platform detected
  
+    profiles: ['Tablet','Phone'],
+    // launch main correct view for particalr platform detected
+
 });

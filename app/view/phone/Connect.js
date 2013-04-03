@@ -15,7 +15,7 @@ Ext
 												alert('Device is ready! Make sure you set your app_id below this alert.');
 												FB.init({
 													appId : "628828893800003",
-													nativeInterface : CDV.FB,
+													nativeInterface : window.plugins.CDV.FB,
 													useCachedDialogs : false
 												});
 

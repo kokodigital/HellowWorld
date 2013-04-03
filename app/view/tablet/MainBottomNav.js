@@ -13,7 +13,7 @@ Ext.define('QF.view.tablet.MainBottomNav', {
 			id : 'mainNavHome',
 			iconCls : 'home',
 			iconMask: true,
-			width:'50px',
+			width:'100px',
 			cls : 'bottomBtn',
 			listeners : {
 				tap : function(e) {
@@ -27,7 +27,7 @@ Ext.define('QF.view.tablet.MainBottomNav', {
 			id : 'mainNavSettings',
 			iconCls : 'settings',
 			iconMask: true,
-			width:'50px',
+			width:'100px',
 			cls : 'bottomBtn',
 			listeners : {
 				tap : function(e) {

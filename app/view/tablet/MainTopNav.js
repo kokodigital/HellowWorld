@@ -23,8 +23,8 @@ Ext.define('QF.view.tablet.MainTopNav', {
 		}, {
 			xtype : 'image',
 			id : 'mainNavLogo',
-			height : '33px',
-			width : '133px',
+			height : '66px',
+			width : '266px',
 			backgroundCls : 'mainNavLogo',
 			align:'center'
 		}, {

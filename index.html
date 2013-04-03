@@ -58,9 +58,9 @@
     <!--### The line below must be kept intact for Sencha Command to build your application -->
     <script id="microloader" type="text/javascript" src="touch/microloader/development.js"></script>
     <script src="phonegap.js"></script>
-	<script src="cdv-plugin-fb-connect.js"></script>
-	<script src="facebook-js-sdk.js"></script>
-	<script src="facebook_js_sdk.js"></script>
+	<script src="cdv-plugin-fb-connect.js" onload="console.log('1')"></script>
+	<script src="facebook-js-sdk.js" onload="console.log('2')"></script>
+	<script src="facebook_js_sdk.js" onload="console.log('3')"></script>
 	<script>
 	document.addEventListener('deviceready',
 										function() {

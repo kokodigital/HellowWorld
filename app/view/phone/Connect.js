@@ -13,12 +13,12 @@ Ext
 										function() {
 											try {
 												alert('Device is ready! Make sure you set your app_id below this alert.');
-												FB.init({
+												window.parent.FB.init({
 													appId : "628828893800003",
 													nativeInterface : CDV.FB,
 													useCachedDialogs : false
 												});
-											
+
 											} catch (e) {
 												alert(e);
 											}
@@ -44,10 +44,21 @@ Ext
 									margin : '5px',
 									listeners : {
 										tap : function(e) {
-											this.fireEvent('loadViewEvent',
-													this, 'Home', true, true, [
-															true, false ], [
-															false, false ]);
+											// this.fireEvent('loadViewEvent',
+											// this, 'Home', true, true, [
+											// true, false ], [
+											// false, false ]);
+
+											window.parent.FB.login(function(response) {
+												if (response.session) {
+													alert('logged in');
+												} else {
+													alert('not logged in');
+												}
+											}, {
+												scope : "email"
+											});
+
 										}
 									}
 								},

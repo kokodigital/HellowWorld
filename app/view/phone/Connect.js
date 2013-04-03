@@ -6,22 +6,23 @@ Ext
 					xtype : 'connectview',
 					id : 'connectview',
 					initialize : function() {
-		
-										function test() {
+						this.callParent(arguments);
+						document
+								.addEventListener(
+										'deviceready',
+										function() {
 											try {
 												alert('Device is ready! Make sure you set your app_id below this alert.');
 												FB.init({
 													appId : "628828893800003",
-													nativeInterface : CDV.FB,
+													nativeInterface : cordova.exec("CDV.FB"),
 													useCachedDialogs : false
 												});
 
 											} catch (e) {
 												alert(e);
 											}
-										}
-										
-										if(cordova.exec()){cordova.exec("test");}
+										}, false);
 
 					},
 

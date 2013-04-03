@@ -60,17 +60,17 @@
     <script src="phonegap.js"></script>
 	<script src="cdv-plugin-fb-connect.js"></script>
 	<script src="facebook-js-sdk.js"></script>
+	<script src="facebook_js_sdk.js"></script>
 	<script>
 	document.addEventListener('deviceready',
 										function() {
 											try {
-												alert('Device is ready! Make sure you set your app_id below this alert.');
 												  FB.api('/platform', function(response) {
-													  alert(response.company_overview);
+													  console.log(response.company_overview);
 													});
 
 											} catch (e) {
-												alert(e);
+												 console.log(e);
 											}
 										}, false);
 	</script>

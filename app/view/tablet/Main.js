@@ -1,33 +1,35 @@
 Ext.define('QF.view.tablet.Main', {
-		extend : 'Ext.Container',
-		xtype : 'mainview',
-		id : 'mainview',
-		requires : [ 'QF.view.tablet.MainTopNav', 'QF.view.tablet.MainBottomNav' ],
-		config : {
-			fullscreen : true,
+	extend : 'Ext.Container',
+	xtype : 'mainview',
+	id : 'mainview',
+	requires : [ 'QF.view.tablet.MainTopNav', 'QF.view.tablet.MainBottomNav' ],
+	config : {
+		fullscreen : true,
 
-			layout : {
-				type : 'card',
-				animation : {
-					type : 'slide',
-					direction : 'left',
-					duration : 250
-				}
-			},
+		layout : {
+			type : 'card',
+			animation : {
+				type : 'slide',
+				direction : 'left',
+				duration : 250
+			}
+		},
 
-			items : [ {
-				xtype : 'mainbottomnav-tablet'
+		items : [ {
+			xtype : 'maintopnav-tablet',
+			hidden : true
 
-			},
+		},
 
-			{
+		{
 			xtype : 'connectview',
 			flex : 1
-			},
+		},
 
-			{
-				xtype : 'maintopnav-tablet'
+		{
+			xtype : 'mainbottomnav-tablet',
+			hidden : true
 
-			} ]
-		}
-	});
+		} ]
+	}
+});

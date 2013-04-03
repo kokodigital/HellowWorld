@@ -10,28 +10,42 @@ Ext.define('QF.view.tablet.Connect', {
 			pack : 'center',
 			align : 'center'
 		},
-	
 		items : [ {
 			xtype : 'button',
-			id: 'conNavloginFB',
+			id : 'conNavloginFB',
 			text : 'Login with Facebook',
 			minWidth : '300px',
-			width:'100%',
-			margin:'5px'
+			width : '100%',
+			margin : '5px',
+			listeners : {
+				tap : function(e) {
+					this.fireEvent('loadViewEvent', this, 'Home', true, true,[true,false],[false, false]);
+				}
+			}
 		}, {
 			xtype : 'button',
-			id: 'conNavloginQF',
+			id : 'conNavloginQF',
 			text : 'Login with Quiz Factor Account',
 			minWidth : '300px',
-			width:'100%',
-			margin:'5px'
+			width : '100%',
+			margin : '5px',
+			listeners : {
+				tap : function(e) {
+					this.fireEvent('loadViewEvent', this, 'Home', true, true,[true,false],[false, false]);
+				}
+			}
 		}, {
 			xtype : 'button',
-			id: 'conNavCreateAccount',
+			id : 'conNavCreateAccount',
 			text : 'Create Account',
 			minWidth : '300px',
-			width:'100%',
-			margin:'5px'
+			width : '100%',
+			margin : '5px',
+			listeners : {
+				tap : function(e) {
+					this.fireEvent('loadViewEvent', this, 'Home', true, true,[true,false],[false, false]);
+				}
+			}
 		} ]
 
 	}

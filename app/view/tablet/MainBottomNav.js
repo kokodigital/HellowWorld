@@ -9,70 +9,32 @@ Ext.define('QF.view.tablet.MainBottomNav', {
 			xtype : 'spacer'
 		}, {
 			xtype : 'button',
-			ui : 'plain',
-			id : 'mainNavChallengeFriends',
-			text : 'Challenges',
+			ui:'plain',
+			id : 'mainNavHome',
+			iconCls : 'home',
+			iconMask: true,
+			width:'50px',
 			cls : 'bottomBtn',
-			minWidth : '140px',
-			flex : 1,
-			iconCls : 'challengeIcon',
-			pressedDelay : 0,
 			listeners : {
 				tap : function(e) {
-					this.fireEvent('loadViewEvent', this);
-					this.fireEvent('pressStateEvent', this);
+					this.fireEvent('loadViewEvent', this,'Home', true, true,[true,false],[false, false]);
 				}
 			}
 		}, {
 
 			xtype : 'button',
-			ui : 'plain',
-			id : 'mainNavSoloQuest',
-			text : 'Solo Quest',
+			ui:'plain',
+			id : 'mainNavSettings',
+			iconCls : 'settings',
+			iconMask: true,
+			width:'50px',
 			cls : 'bottomBtn',
-			minWidth : '140px',
-			flex : 1,
-			iconCls : 'soloIcon',
-			pressedDelay : 0,
 			listeners : {
 				tap : function(e) {
-					this.fireEvent('loadViewEvent', this);
-					this.fireEvent('pressStateEvent', this);
+					this.fireEvent('loadViewEvent', this,'Settings',false, true,[false,true],[true,true]);
 				}
 			}
 
-		}, {
-			xtype : 'button',
-			ui : 'plain',
-			id : 'mainNavDailyChallenge',
-			text : 'Daily Friends',
-			cls : 'bottomBtn',
-			minWidth : '140px',
-			flex : 1,
-			iconCls : 'dailyIcon',
-			pressedDelay : 0,
-			listeners : {
-				tap : function(e) {
-					this.fireEvent('loadViewEvent', this);
-					this.fireEvent('pressStateEvent', this);
-				}
-			}
-		}, {
-			xtype : 'button',
-			ui : 'plain',
-			id : 'mainNavMore',
-			text : 'More',
-			cls : 'bottomBtn',
-			minWidth : '140px',
-			flex : 1,
-			iconCls : 'moreIcon',
-			pressedDelay : 0,
-			listeners : {
-				tap : function(e) {
-					this.fireEvent('loadViewEvent', this);
-					this.fireEvent('pressStateEvent', this);
-				}
-			}
 		}, {
 			xtype : 'spacer'
 		} ]

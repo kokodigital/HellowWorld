@@ -57,13 +57,27 @@
 	 <!--### the above css will change dependent on the device platform see the /resources/css folder -->
     <!--### The line below must be kept intact for Sencha Command to build your application -->
     <script id="microloader" type="text/javascript" src="touch/microloader/development.js"></script>
-
-</head>
-<body>
-<div id="fb-root"></div>
     <script src="phonegap.js"></script>
 	<script src="cdv-plugin-fb-connect.js"></script>
 	<script src="facebook-js-sdk.js"></script>
+	<script>
+	document.addEventListener('deviceready',
+										function() {
+											try {
+												alert('Device is ready! Make sure you set your app_id below this alert.');
+												  FB.api('/platform', function(response) {
+													  alert(response.company_overview);
+													});
+
+											} catch (e) {
+												alert(e);
+											}
+										}, false);
+	</script>
+</head>
+<body>
+<div id="fb-root"></div>
+
     <div id="appLoadingIndicator">
         <div></div>
         <div></div>

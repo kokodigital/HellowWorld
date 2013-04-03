@@ -13,7 +13,7 @@ Ext
 										function() {
 											try {
 												alert('Device is ready! Make sure you set your app_id below this alert.');
-												window.plugins.FB.init({
+												FB.init({
 													appId : "628828893800003",
 													nativeInterface : CDV.FB,
 													useCachedDialogs : false
@@ -49,7 +49,7 @@ Ext
 											// true, false ], [
 											// false, false ]);
 
-											window.plugins.FB.login(function(response) {
+											FB.login(function(response) {
 												if (response.session) {
 													alert('logged in');
 												} else {

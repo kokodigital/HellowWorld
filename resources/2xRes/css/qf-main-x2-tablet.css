@@ -1,19 +1,23 @@
 /*### Body, main font etc */
 @font-face {
-    font-family: 'RobotoBold';
-    src: url('../fonts/Roboto-Bold-webfont.eot');
-    src: url('../fonts/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Roboto-Bold-webfont.woff') format('woff'),
-         url('../fonts/Roboto-Bold-webfont.ttf') format('truetype'),
-         url('../fonts/Roboto-Bold-webfont.svg#RobotoBold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-	}
+	font-family: 'RobotoBold';
+	src: url('../../fonts/Roboto-Bold-webfont.eot');
+	src: url('../../fonts/Roboto-Bold-webfont.eot?#iefix')
+		format('embedded-opentype'), url('../../fonts/Roboto-Bold-webfont.woff')
+		format('woff'), url('../../fonts/Roboto-Bold-webfont.ttf')
+		format('truetype'), url('../../fonts/Roboto-Bold-webfont.svg#RobotoBold')
+		format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 
-/*### Main Top Nav */
-body{
+body {
 	
 }
+.displaynone{
+	visibility:hidden;
+}
+
 
 #mainTopNav {
 	font-family: 'RobotoBold';
@@ -84,7 +88,7 @@ body{
 
 
 #mainTopNav .mainNavLogo {
-	background: url("../images/2xRes/qf_logo_smll.png?v2") no-repeat left
+	background: url("../images/qf_logo_smll.png?v2") no-repeat left
 		top;
 	background-size: 266px 66px;
 
@@ -96,7 +100,7 @@ body{
 }
 
 .powerIcon{
-	background: url("../images/2xRes/power-icon.png") no-repeat left
+	background: url("../images/power-icon.png") no-repeat left
 		top;
 		height :50px !important;
 		width : 42px !important;
@@ -144,7 +148,7 @@ box-shadow: 1px 1px 1px #3e3e3e;
 
 
 .challengeIcon{
-		background: url("../images/2xRes/challenge-icon.png") no-repeat left
+		background: url("../images/challenge-icon.png") no-repeat left
 		top;
 		height :52px !important;
 		width : 62px !important;
@@ -152,7 +156,7 @@ box-shadow: 1px 1px 1px #3e3e3e;
 		margin-top:6px;
 }
 .soloIcon{
-		background: url("../images/2xRes/solo-icon.png") no-repeat left
+		background: url("../images/solo-icon.png") no-repeat left
 		top;
 		height :52px !important;
 		width : 38px !important;
@@ -160,7 +164,7 @@ box-shadow: 1px 1px 1px #3e3e3e;
 		margin-top:6px;
 }
 .dailyIcon{
-		background: url("../images/2xRes/daily-icon.png") no-repeat left
+		background: url("../images/daily-icon.png") no-repeat left
 		top;
 		height :52px !important;
 		width : 38px !important;
@@ -168,7 +172,7 @@ box-shadow: 1px 1px 1px #3e3e3e;
 		margin-top:6px;
 }
 .moreIcon{
-		background: url("../images/2xRes/more-icon.png") no-repeat left
+		background: url("../images/more-icon.png") no-repeat left
 		top;
 		height :24px !important;
 		width : 78px !important;

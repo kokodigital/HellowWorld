@@ -1,21 +1,25 @@
 /*### Body, main font etc */
 @font-face {
 	font-family: 'RobotoBold';
-	src: url('../fonts/Roboto-Bold-webfont.eot');
-	src: url('../fonts/Roboto-Bold-webfont.eot?#iefix')
-		format('embedded-opentype'), url('../fonts/Roboto-Bold-webfont.woff')
-		format('woff'), url('../fonts/Roboto-Bold-webfont.ttf')
-		format('truetype'), url('../fonts/Roboto-Bold-webfont.svg#RobotoBold')
+	src: url('../../fonts/Roboto-Bold-webfont.eot');
+	src: url('../../fonts/Roboto-Bold-webfont.eot?#iefix')
+		format('embedded-opentype'), url('../../fonts/Roboto-Bold-webfont.woff')
+		format('woff'), url('../../fonts/Roboto-Bold-webfont.ttf')
+		format('truetype'), url('../../fonts/Roboto-Bold-webfont.svg#RobotoBold')
 		format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
-/*### Main Top Nav */
 body {
 	
 }
+.displaynone{
+	visibility:hidden;
+}
 
+
+/*### Main Top Nav */
 #mainTopNav {
 	font-family: 'RobotoBold';
 	height: 44px;
@@ -84,7 +88,7 @@ body {
 }
 
 #mainTopNav .mainNavLogo {
-	background: url("../images/15xRes/qf_logo_smll.png?v2") no-repeat left
+	background: url("../images/qf_logo_smll.png?v2") no-repeat left
 		top;
 	background-size: 133px 33px;
 }
@@ -95,7 +99,7 @@ body {
 }
 
 .powerIcon {
-	background: url("../images/15xRes/power-icon.png") no-repeat left top;
+	background: url("../images/power-icon.png") no-repeat left top;
 	height: 25px !important;
 	width: 21px !important;
 	background-size: 21px 25px;
@@ -139,8 +143,7 @@ body {
 }
 
 .challengeIcon {
-	background: url("../images/15xRes/challenge-icon.png") no-repeat left
-		top;
+	background: url("../images/challenge-icon.png") no-repeat left top;
 	height: 26px !important;
 	width: 31px !important;
 	background-size: 31px 26px;
@@ -148,7 +151,7 @@ body {
 }
 
 .soloIcon {
-	background: url("../images/15xRes/solo-icon.png") no-repeat left top;
+	background: url("../images/solo-icon.png") no-repeat left top;
 	height: 26px !important;
 	width: 19px !important;
 	background-size: 19px 26px;
@@ -156,7 +159,7 @@ body {
 }
 
 .dailyIcon {
-	background: url("../images/15xRes/daily-icon.png") no-repeat left top;
+	background: url("../images/daily-icon.png") no-repeat left top;
 	height: 26px !important;
 	width: 19px !important;
 	background-size: 19px 26px;
@@ -164,7 +167,7 @@ body {
 }
 
 .moreIcon {
-	background: url("../images/15xRes/more-icon.png") no-repeat left top;
+	background: url("../images/more-icon.png") no-repeat left top;
 	height: 12px !important;
 	width: 39px !important;
 	background-size: 39px 12px;

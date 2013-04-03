@@ -13,13 +13,12 @@ Ext.define('QF.profile.Phone', {
     launch: function() {
 
 	 var cssDom = Ext.getDom('maincss');
-	
-	 
+	 	 cssDom.href = 'resources/1xRes/css/qf-main.css?'+Math.floor(Math.random()*10e12);
 	  if(window.devicePixelRatio == 2){
-		  cssDom.href = 'resources/css/qf-main-x2.css?'+Math.floor(Math.random()*10e12);
+		  cssDom.href = 'resources/2xRes/css/qf-main-x2.css?'+Math.floor(Math.random()*10e12);
 		  //### css class for retina graphics x2 bigger
 	   } else  if(window.devicePixelRatio > 1){
-		   cssDom.href = 'resources/css/qf-main-x15.css?'+Math.floor(Math.random()*10e12);
+		   cssDom.href = 'resources/15xRes/css/qf-main-x15.css?'+Math.floor(Math.random()*10e12);
 		 //### css class for medium graphics x1.5 bigger
 	   }
 	   //### change the css dependent on the device platform

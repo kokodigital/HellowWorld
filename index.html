@@ -5,19 +5,8 @@
 <title>Untitled Document</title>
 <script src="phonegap.js"></script>
  <script src="childbrowser.js"></script>
- <script src="js/jquery-1.9.1.min.js"></script>
- <script src="js/jquery.touchSwipe.min.js"></script>
  <script>
- 
-	$(function() {	
-		$("#test").swipe( {
-			swipe:function(event, direction, distance, duration, fingerCount) {
-				$("#test").text("You swiped " + direction + " with " + fingerCount + " fingers");
-			},
-			threshold:0,
-			fingers:'all'
-		});
-	});
+
 
 	  
             function onBodyLoad()
@@ -40,8 +29,7 @@
 </p>
 
 										<p>
-										<div id="test" style="width:300px;height:300px;border:2px red solid">Swipe me with different combinations of fingers</div>
-										
+									
 										</p>
 </body>
 </html>

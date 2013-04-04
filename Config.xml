@@ -20,4 +20,5 @@
 	<!--gap:splash src="splash.png" -->
 	<gap:plugin name="ChildBrowser" version="~4"/> 
 	<feature name="http://api.phonegap.com/1.0/file"/>
+	<access origin="*" /> 
 </widget>

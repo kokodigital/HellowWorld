@@ -65,13 +65,7 @@
 </head>
 <body>
 <div id="fb-root"></div>
-
-    <div id="appLoadingIndicator">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-		<script>
+<script>
 	document.addEventListener('deviceready',
 										function() {
 											try {
@@ -81,9 +75,17 @@
 
 											} catch (e) {
 												 console.log(e);
+												 console.log(window.PhoneGap.resources);
 											}
-											console.log(window.PhoneGap.resources);
+											
 										}, false);
 	</script>
+
+    <div id="appLoadingIndicator">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+		
 </body>
 </html>

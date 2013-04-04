@@ -22,13 +22,13 @@ Ext.define('QF.view.tablet.Login', {
 					listeners : {
 						tap : function(e) {
 						var redirectUrl = Ext.Object.toQueryString({
-				            redirect_uri: window.location.protocol + "//" + window.location.host + window.location.pathname,
+				            redirect_uri: 'http://kokodev.co.uk/qf/',
 				            client_id: QF.app.facebookAppId,
 				            response_type: 'token'
 				        });						
 						
 
-					 window.plugins.childBrowser.showWebPage(='https://m.facebook.com/dialog/oauth?' + redirectUrl, { showLocationBar: false });
+					 window.plugins.childBrowser.showWebPage('https://m.facebook.com/dialog/oauth?' + redirectUrl, { showLocationBar: false });
 						//window.location='https://m.facebook.com/dialog/oauth?' + redirectUrl;
 					 
 						}

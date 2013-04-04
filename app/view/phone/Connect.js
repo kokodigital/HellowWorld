@@ -5,27 +5,6 @@ Ext
 					extend : 'Ext.Panel',
 					xtype : 'connectview',
 					id : 'connectview',
-					initialize : function() {
-						this.callParent(arguments);
-						document
-								.addEventListener(
-										'deviceready',
-										function() {
-											try {
-												alert('Device is ready! Make sure you set your app_id below this alert.');
-												FB.init({
-													appId : "628828893800003",
-													nativeInterface : cordova.exec("CDV.FB"),
-													useCachedDialogs : false
-												});
-
-											} catch (e) {
-												alert(e);
-											}
-										}, false);
-
-					},
-
 					config : {
 						flex : 1,
 						margin : '10px',
@@ -44,20 +23,7 @@ Ext
 									margin : '5px',
 									listeners : {
 										tap : function(e) {
-											// this.fireEvent('loadViewEvent',
-											// this, 'Home', true, true, [
-											// true, false ], [
-											// false, false ]);
-
-											FB.login(function(response) {
-												if (response.session) {
-													alert('logged in');
-												} else {
-													alert('not logged in');
-												}
-											}, {
-												scope : "email"
-											});
+										this.fireEvent('loadViewEvent', this, 'Home', true, true, [ true, false ], [false, false ]);
 
 										}
 									}

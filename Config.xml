@@ -19,7 +19,8 @@
     </author>
 	<!--gap:splash src="splash.png" -->
 	<feature name="http://api.phonegap.com/1.0/file"/>
-	<gap:plugin name="FacebookConnect">
+	
+	<!--gap:plugin name="FacebookConnect">
 	   <param name="APP_ID" value="628828893800003" />
-	 </gap:plugin>
+	 </gap:plugin-->
 </widget>

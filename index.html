@@ -60,10 +60,9 @@
     <script src="phonegap.js" onload="console.log('0')"></script>
 	<script src="cdv-plugin-fb-connect.js" onload="console.log('1')"></script>
 	<script src="facebook-js-sdk.js" onload="console.log('2')"></script>
-	<script src="facebook_js_sdk.js" onload="console.log('3')"></script>
 	<script>
-	document.addEventListener('deviceready',
-										function() {
+	
+										function test123() {
 											try {
 												  FB.api('/platform', function(response) {
 													  console.log(response.company_overview);
@@ -71,14 +70,15 @@
 
 											} catch (e) {
 												 console.log(e);
-												 console.log(window.PhoneGap.resources);
+												 //console.log(window.PhoneGap.resources);
 											}
 											
-										}, false);
+										}
 	</script>
 
 </head>
 <body>
+<a href="#" onclick="test123();return false"> test123 </a>
 <div id="fb-root"></div>
 
 

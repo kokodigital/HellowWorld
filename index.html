@@ -24,7 +24,7 @@
    <body onload="onBodyLoad();">
 <p>Hello World 123</p>
 <p>
-<a href="#" onclick="cb.showWebPage('http://www.google.com')">Click here to open Google</a>
+<a href="#" onclick="try{cb.showWebPage('http://www.google.com');} catch (e) { console.log(e);}">Click here to open Google</a>
 
 </p>
 

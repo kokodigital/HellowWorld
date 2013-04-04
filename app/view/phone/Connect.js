@@ -5,6 +5,28 @@ Ext
 					extend : 'Ext.Panel',
 					xtype : 'connectview',
 					id : 'connectview',
+					initialize : function() {
+						this.callParent(arguments);
+						window.fbAsyncInit = Ext.bind(this.onFacebookInit, this);
+
+					//	(function(d){
+						//	var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+						//	js = d.createElement('script'); js.id = id; js.async = true;
+						//	js.src = "//connect.facebook.net/en_US/all.js";
+						//	d.getElementsByTagName('head')[0].appendChild(js);
+						//}(document));
+						
+						(function(d, s, id, debug){
+						 var js, fjs = d.getElementsByTagName(s)[0];
+						 if (d.getElementById(id)) {return;}
+						 js = d.createElement(s); js.id = id;
+						 js.src = "//connect.facebook.net/en_US/all" + (debug ? "/debug" : "") + ".js";
+						 fjs.parentNode.insertBefore(js, fjs);
+					   }(document, 'script', 'facebook-jssdk', /*debug*/ false));
+						
+						
+					},
+
 					config : {
 						flex : 1,
 						margin : '10px',
@@ -23,7 +45,20 @@ Ext
 									margin : '5px',
 									listeners : {
 										tap : function(e) {
-										this.fireEvent('loadViewEvent', this, 'Home', true, true, [ true, false ], [false, false ]);
+											// this.fireEvent('loadViewEvent',
+											// this, 'Home', true, true, [
+											// true, false ], [
+											// false, false ]);
+
+											FB.login(function(response) {
+												if (response.session) {
+													alert('logged in');
+												} else {
+													alert('not logged in');
+												}
+											}, {
+												scope : "email"
+											});
 
 										}
 									}

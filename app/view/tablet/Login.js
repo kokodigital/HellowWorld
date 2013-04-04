@@ -21,7 +21,16 @@ Ext.define('QF.view.tablet.Login', {
 					margin : '5px',
 					listeners : {
 						tap : function(e) {
-						 window.plugins.childBrowser.showWebPage("http://www.google.com", { showLocationBar: false });
+						var redirectUrl = Ext.Object.toQueryString({
+				            redirect_uri: window.location.protocol + "//" + window.location.host + window.location.pathname,
+				            client_id: QF.app.facebookAppId,
+				            response_type: 'token'
+				        });						
+						
+
+					 window.plugins.childBrowser.showWebPage(='https://m.facebook.com/dialog/oauth?' + redirectUrl, { showLocationBar: false });
+						//window.location='https://m.facebook.com/dialog/oauth?' + redirectUrl;
+					 
 						}
 					}
 				},

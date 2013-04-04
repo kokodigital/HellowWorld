@@ -21,27 +21,16 @@ Ext.define('QF.view.phone.Login', {
 					margin : '5px',
 					listeners : {
 						tap : function(e) {
-							// this.fireEvent('loadViewEvent',
-							// this, 'Home', true, true, [
-							 //true, false ], [
-							// false, false ]);
-							try {
-								  FB.api('/platform', function(response) {
-									  console.log(response.company_overview);
-							
-							            Ext.Msg.alert('Success',  response.company_overview, Ext.emptyFn);
-
-
-									});
-
-							} catch (e) {
-								
 						
-								 Ext.Msg.alert('Error',e, Ext.emptyFn);
-								 console.log(e);
-								 //console.log(window.PhoneGap.resources);
-							}
+							var redirectUrl = Ext.Object.toQueryString({
+					            redirect_uri: window.location.protocol + "//" + window.location.host + window.location.pathname,
+					            client_id: QF.app.facebookAppId,
+					            response_type: 'token'
+					        });						
+							
 
+							window.plugins.childBrowser.showWebPage(='https://m.facebook.com/dialog/oauth?' + redirectUrl, { showLocationBar: false });
+							//window.location='https://m.facebook.com/dialog/oauth?' + redirectUrl;
 						}
 					}
 				},
@@ -54,27 +43,10 @@ Ext.define('QF.view.phone.Login', {
 					margin : '5px',
 					listeners : {
 						tap : function(e) {
-							//this.fireEvent('loadViewEvent', this, 'Home', true,
-									//true, [ true, false ], [ false, false ]);
-							
+							this.fireEvent('loadViewEvent', this, 'Home', true,
+							true, [ true, false ], [ false, false ]);
 									
-						try {
-						    FB.init({
-					            appId: '628828893800003',
-					            nativeInterface: CDV.FB,
-					            useCachedDialogs: false
-					        });
-
-							} catch (e) {
-								
 						
-								 Ext.Msg.alert('Error',e, Ext.emptyFn);
-								 console.log(e);
-								 //console.log(window.PhoneGap.resources);
-							}
-
-
-
 						}
 					}
 				},

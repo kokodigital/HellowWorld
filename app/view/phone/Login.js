@@ -22,17 +22,13 @@ Ext.define('QF.view.phone.Login', {
 					listeners : {
 						tap : function(e) {
 
-							var redirectUrl = Ext.Object.toQueryString({
-								redirect_uri : 'http://kokodev.co.uk/qf/',
-								client_id : QF.app.facebookAppId,
-								response_type : 'token'
-							});
-
-							window.plugins.childBrowser.showWebPage(
-									'https://m.facebook.com/dialog/oauth?'
-											+ redirectUrl, {
-										showLocationBar : false
-									});
+							//var redirectUrl = Ext.Object.toQueryString({
+							//	redirect_uri : 'http://kokodev.co.uk/qf/',
+								//client_id : QF.app.facebookAppId,
+							//	response_type : 'token'
+						//	});
+//
+							window.plugins.childBrowser.showWebPage('http://facebook.com', {showLocationBar : false});
 							// window.location='https://m.facebook.com/dialog/oauth?'
 							// + redirectUrl;
 						}

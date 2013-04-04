@@ -22,7 +22,7 @@ Ext.define('QF.view.phone.Main', {
 		},
 
 		{
-			xtype : 'connectview',
+			xtype : 'loginview',
 			flex : 1
 		},
 

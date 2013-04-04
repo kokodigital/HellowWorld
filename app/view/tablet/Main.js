@@ -22,7 +22,7 @@ Ext.define('QF.view.tablet.Main', {
 		},
 
 		{
-			xtype : 'connectview',
+			xtype : 'loginview',
 			flex : 1
 		},
 

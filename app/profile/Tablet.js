@@ -3,8 +3,8 @@ Ext.define('QF.profile.Tablet', {
 
 	config : {
 
-		controllers : [ 'Main' ],
-		views: ['Main','Connect','Home','Challenges','SoloQuest','DailyFriends','Shop','Settings']
+		controllers : [ 'Main','Login' ],
+		views: ['Main','Login','Home','Challenges','SoloQuest','DailyFriends','Shop','Settings']
 	
 	},
 

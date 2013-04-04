@@ -18,9 +18,6 @@
        Koko Digital
     </author>
 	<!--gap:splash src="splash.png" -->
+	<gap:plugin name="ChildBrowser" version="~4"/> 
 	<feature name="http://api.phonegap.com/1.0/file"/>
-	
-	<ap:plugin name="FacebookConnect">
-	   <param name="APP_ID" value="628828893800003" />
-	 </gap:plugin>
 </widget>

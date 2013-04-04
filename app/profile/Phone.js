@@ -2,8 +2,8 @@ Ext.define('QF.profile.Phone', {
     extend: 'QF.profile.Base',
 
     config: {
-        controllers: ['Main'],
-        views: ['Main','Connect','Home','Challenges','SoloQuest','DailyFriends','Shop','Settings']
+        controllers: ['Main','Login'],
+        views: ['Main','Login','Login','Home','Challenges','SoloQuest','DailyFriends','Shop','Settings']
     },
 
     isActive: function() {

@@ -1,7 +1,7 @@
-Ext.define('QF.view.phone.Connect', {
+Ext.define('QF.view.phone.Login', {
 	extend : 'Ext.Panel',
-	xtype : 'connectview',
-	id : 'connectview',
+	xtype : 'loginview',
+	id : 'loginview',
 
 	config : {
 		flex : 1,
@@ -14,7 +14,7 @@ Ext.define('QF.view.phone.Connect', {
 		items : [
 				{
 					xtype : 'button',
-					id : 'conNavloginFB',
+					id : 'logNavloginFB',
 					text : 'Login with Facebook',
 					minWidth : '300px',
 					width : '100%',
@@ -47,7 +47,7 @@ Ext.define('QF.view.phone.Connect', {
 				},
 				{
 					xtype : 'button',
-					id : 'conNavloginQF',
+					id : 'logNavloginQF',
 					text : 'Login with Quiz Factor Account',
 					minWidth : '300px',
 					width : '100%',
@@ -80,7 +80,7 @@ Ext.define('QF.view.phone.Connect', {
 				},
 				{
 					xtype : 'button',
-					id : 'conNavCreateAccount',
+					id : 'logNavCreateAccount',
 					text : 'Create Account',
 					minWidth : '300px',
 					width : '100%',

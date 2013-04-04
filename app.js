@@ -8,6 +8,7 @@ Ext.Loader.setPath({
 Ext.application({
     name: 'QF',
     retina:'',
+    facebookAppId: '628828893800003',
     
     requires: [
         'Ext.MessageBox'],

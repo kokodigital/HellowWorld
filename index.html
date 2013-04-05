@@ -5,32 +5,20 @@
 <title>Untitled Document</title>
 <script src="phonegap.js"></script>
  <script src="childbrowser.js"></script>
- <script>
-
-
-	  
-            function onBodyLoad()
-            {      
-                document.addEventListener("deviceready", onDeviceReady, false);
-            }
-            function onDeviceReady()
-            {
-					ChildBrowser.install();
-                    cb = window.plugins.childBrowser;
-            }
-
-	
- </script>
 </head>
-   <body onload="onBodyLoad();">
-<p>Hello World 123</p>
-<p>
-<a href="#" onclick="try{cb.showWebPage('http://www.google.com');} catch (e) { console.log(e);}">Click here to open Google</a>
-
-</p>
-
-										<p>
-									
-										</p>
+<body>
+<h1>Child Browser Demo</h1>
+ 
+<a onClick="launchBrowser()" href="#">What does it do?</a>
+ 
 </body>
+<script src="phonegap.js"></script>
+<script src="childbrowser.js"></script>
+<script>
+function launchBrowser() {
+alert((window.plugins.childBrowser != undefined) + " should be true")
+window.plugins.childBrowser.showWebPage('http://www.phonegap.com',
+{ showLocationBar: true });
+}
+</script>
 </html>

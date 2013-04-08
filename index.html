@@ -65,10 +65,13 @@ var auth = new function() {
 	if(uid){
 		$('#fblogin').css('display','none');
 		// ajax graph api
+		console.log('test');
 		var url = "http://graph.facebook.com/me?access_token="+token +"&callback=?";
 			//Use jQuery getJSON method to fetch the data;
+			
 			$.getJSON(url,function(json){
 				$('#fbinfo').text(json);
+				console.log(json);
 				}
 			);
 		

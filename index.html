@@ -15,11 +15,14 @@ window.plugins.childBrowser.showWebPage('http://www.phonegap.com',
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
+ console.log('1');
   FB.init({
     appId : '628828893800003',
     nativeInterface : CDV.FB,
     useCachedDialogs : false
   });
+  console.log('2');
+   console.log(FB);
 }
 
 
@@ -29,7 +32,7 @@ function onDeviceReady() {
 <h1>Plugin tests</h1>
  
 <a onClick="launchBrowser()" href="#">Child Browser</a>
-<a onClick="FB.login()" href="#">facebook</a>
+<a onClick="FB.login();console.log(FB);" href="#">facebook</a>
 
  
 </body>

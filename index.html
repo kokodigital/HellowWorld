@@ -11,21 +11,25 @@ alert((window.plugins.childBrowser != undefined) + " should be true")
 window.plugins.childBrowser.showWebPage('http://www.phonegap.com',
 { showLocationBar: true });
 }
-function fbint(){
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
   FB.init({
-    appId : auth.fbId,
+    appId : '628828893800003',
     nativeInterface : CDV.FB,
     useCachedDialogs : false
   });
-
 }
+
+
 </script>
 </head>
 <body>
 <h1>Plugin tests</h1>
  
 <a onClick="launchBrowser()" href="#">Child Browser</a>
-<a onClick="fbint()" href="#">facebook</a>
+<a onClick="FB.login()" href="#">facebook</a>
 
  
 </body>

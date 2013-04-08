@@ -3,18 +3,30 @@
 <head>
 <script src="phonegap.js"></script>
 <script src="childbrowser.js"></script>
+<script src="cdv-plugin-fb-connect.js"></script>
+<script src="facebook-js-sdk.js"></script>
 <script>
 function launchBrowser() {
 alert((window.plugins.childBrowser != undefined) + " should be true")
 window.plugins.childBrowser.showWebPage('http://www.phonegap.com',
 { showLocationBar: true });
 }
+function fbint(){
+  FB.init({
+    appId : auth.fbId,
+    nativeInterface : CDV.FB,
+    useCachedDialogs : false
+  });
+
+}
 </script>
 </head>
 <body>
-<h1>Child Browser Demo</h1>
+<h1>Plugin tests</h1>
  
-<a onClick="launchBrowser()" href="#">What does it do?</a>
+<a onClick="launchBrowser()" href="#">Child Browser</a>
+<a onClick="fbint()" href="#">facebook</a>
+
  
 </body>
 

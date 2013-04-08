@@ -21,41 +21,25 @@ function onDeviceReady() {
     nativeInterface : CDV.FB,
     useCachedDialogs : false
   });
-  console.log('2');
-   console.log(FB);
+	console.log('2');
+    console.log(FB);
 }
 
-function login() {
-	    console.log('1');
-                FB.login(
-                         function(response) {
-                         if (response.session) {
-                         alert('logged in');
-						 console.log('2');
-                         } else {
-                         alert('not logged in');
-						  console.log('3');
-                         }
-                         },
-                         { scope: "email" }
-                         );
-            }
 var auth = new function() {
 
   this.fbId = "628828893800003";
-
   this.FBlogin = function() {
-
     FB.login(function(response) {
 
  var uid = null; 
  try {
-     uid = response.authResponse.userId;
+      uid = response.authResponse.userId;
  } catch (e) {
-     main.errorLog(e, "FB.login");
+	  console.log('facebook login');
+      console.log(e);
  }
 
- // iOs Hack other property name
+ // iOs Hack other property name for id different
  if (!uid && navigator.userAgent.match(/(iPhone)/i)) {
     try {
        uid = response.authResponse.userID;
@@ -68,10 +52,9 @@ var auth = new function() {
  if (response.status == 'connected') {
 	console.log('connected')
 	console.log(response.authResponse.accessToken);
-   
-
+	
  } else if (response.status === 'not_authorized') {
-  console.log('Error in authentication: not authorized');
+   console.log('Error in authentication: not authorized');
  } else {
     console.log('Unknown error in authentication');
  }
@@ -87,7 +70,7 @@ var auth = new function() {
 <h1>Plugin tests</h1>
  
 <a onClick="launchBrowser()" href="#">Child Browser</a>
-<a onClick="auth.FBlogin();" href="#">facebook</a>
+<a onClick="auth.FBlogin();" href="#" id="fblogin" >facebook</a>
 
  
 </body>

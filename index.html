@@ -2,13 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <script src="phonegap.js"></script>
-<script src="jquery.js"></script>
 <script src="childbrowser.js"></script>
 <script src="cdv-plugin-fb-connect.js"></script>
 <script src="facebook-js-sdk.js"></script>
 <script>
-jQuery.noConflict();
-
 function launchBrowser() {
 alert((window.plugins.childBrowser != undefined) + " should be true")
 window.plugins.childBrowser.showWebPage('http://www.phonegap.com',
@@ -58,20 +55,10 @@ var auth = new function() {
 	console.log('connected')
 	console.log(response.authResponse.accessToken);
 	
-	$('#fblogin').css('display','none');
-		// ajax graph api
-		console.log('test');
-		var url = "http://graph.facebook.com/me?access_token="+token +"&callback=?";
-			//Use jQuery getJSON method to fetch the data;
-			
-			$.getJSON(url,function(json){
-				$('#fbinfo').text(json);
-				console.log(json);
-				}
-			);
+	document.getElementById('fblogin').style.display = 'none';
+	document.getElementById('fbinfo').innerHTML = 'Connected:<br/>'+response.authResponse.accessToken;
 	
-	
-	
+
  } else if (response.status === 'not_authorized') {
    console.log('Error in authentication: not authorized');
  } else {

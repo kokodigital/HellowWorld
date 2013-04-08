@@ -24,7 +24,21 @@ function onDeviceReady() {
   console.log('2');
    console.log(FB);
 }
-
+       function login() {
+	    console.log('1');
+                FB.login(
+                         function(response) {
+                         if (response.session) {
+                         alert('logged in');
+						 console.log('2');
+                         } else {
+                         alert('not logged in');
+						  console.log('3');
+                         }
+                         },
+                         { scope: "email" }
+                         );
+            }
 
 </script>
 </head>
@@ -32,7 +46,7 @@ function onDeviceReady() {
 <h1>Plugin tests</h1>
  
 <a onClick="launchBrowser()" href="#">Child Browser</a>
-<a onClick="FB.login();console.log(FB);" href="#">facebook</a>
+<a onClick="login()" href="#">facebook</a>
 
  
 </body>

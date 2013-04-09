@@ -3,8 +3,8 @@
 <head>
 <script src="phonegap.js"></script>
 <script src="childbrowser.js"></script>
-<script src="cdv-plugin-fb-connect.js"></script>
-<script src="facebook-js-sdk.js"></script>
+<!--script src="cdv-plugin-fb-connect.js"></script-->
+<!--script src="facebook-js-sdk.js"></script-->
 <script>
 function launchBrowser() {
 alert((window.plugins.childBrowser != undefined) + " should be true")
@@ -12,7 +12,7 @@ window.plugins.childBrowser.showWebPage('http://www.phonegap.com',
 { showLocationBar: true });
 }
 
-document.addEventListener("deviceready", onDeviceReady, false);
+/*document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
  console.log('1');
@@ -75,7 +75,7 @@ var auth = new function() {
 	
   }
 }			
-			
+		*/	
 			
 
 </script>

@@ -4,11 +4,13 @@
         id        = "com.kokodigital.quizfactor"
         versionCode="10" 
         version   = "1.0.0">
-	<preference name="phonegap-version" value="2.2.0" />
+	
 	<gap:plugin name="ChildBrowser" version="4.0.0" />
+	<gap:plugin name="GenericPush" />
 	<gap:plugin name="FacebookConnect">
 		<param name="APP_ID" value="628828893800003" />
 	</gap:plugin>
+	
 	<access origin="*" />
 	
     <name>Quiz Factor</name>

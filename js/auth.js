@@ -108,7 +108,13 @@ function checkUserPermissions(permissionToCheck) {
 
 //Prompt the user to login and ask for the 'email' permission
 function promptLogin() {
+	console.log('asdasd');
+try {	
   FB.login(null, {scope: 'email'});
+  } catch(e){
+	console.log(e); 
+  }
+  
 }
 
 //This will prompt the user to grant you acess to a given permission

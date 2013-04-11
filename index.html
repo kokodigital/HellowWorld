@@ -3,89 +3,44 @@
 <head>
 <script src="phonegap.js"></script>
 <script src="childbrowser.js"></script>
-<!--script src="cdv-plugin-fb-connect.js"></script-->
-<!--script src="facebook-js-sdk.js"></script-->
+<script src="cdv-plugin-fb-connect.js"></script>
+<script src="facebook-js-sdk.js"></script>
+<script src="js/auth.js"></script>
 <script>
 function launchBrowser() {
-alert((window.plugins.childBrowser != undefined) + " should be true")
+try{
 window.plugins.childBrowser.showWebPage('http://www.phonegap.com',
 { showLocationBar: true });
+} catch(e){
+	console.log(e);
+}
 }
 
-/*document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
- console.log('1');
+ console.log('################ INT FB');
   FB.init({
-    appId : auth.fbId,
+    appId : '628828893800003',
     nativeInterface : CDV.FB,
     useCachedDialogs : false
   });
-	console.log('2');
-    console.log(FB);
+
+  FB.getLoginStatus(handleStatusChange);
+  authUser();
 }
 
-var auth = new function() {
-
-  this.fbId = "628828893800003";
-  this.FBlogin = function() {
-    FB.login(function(response) {
-
- var uid = null; 
- var token = null;
- try {
-      uid = response.authResponse.userId;
- } catch (e) {
-	  console.log('facebook login');
-      console.log(e);
- }
-
- // iOs Hack other property name for id different
- if (!uid && navigator.userAgent.match(/(iPhone)/i)) {
-    try {
-       uid = response.authResponse.userID;
-    } catch (e) {
-		console.log('facebook login');
-        console.log(e);
-    }
- }
-
- if (response.status == 'connected') {
-	token = response.authResponse.accessToken;
-	console.log('connected')
-	console.log(response.authResponse.accessToken);
-	
-	document.getElementById('fblogin').style.display = 'none';
-	document.getElementById('fbinfo').innerHTML = 'Connected:<br/>'+response.authResponse.accessToken;
-	
-
- } else if (response.status === 'not_authorized') {
-   console.log('Error in authentication: not authorized');
- } else {
-    console.log('Unknown error in authentication');
- }
-   
-
-
-
-   }, {scope : "email"});
-	
-	
-	
-	
-  }
-}			
-		*/	
-			
-
+		
 </script>
 </head>
 <body>
+<div id="fb-root"></div>
 <h1>Plugin tests</h1>
  
-<a onClick="launchBrowser();" href="#">Child Browser</a>
-<a onClick="auth.FBlogin();" href="#" id="fblogin" >facebook</a>
-<div id="fbinfo"></div>
+<a onClick="launchBrowser();" href="#">Child Browser</a><br/><br/>
+<a onClick="promptLogin();" href="#" id="fblogin" >Facebook Login</a><br/><br/>
+<a onClick="logout();" href="#" id="fbloginout" style="display:none" >Facebook Logout</a><br/><br/>
+<img id="user-picture" /><br /><span id="user-name"></span><br /><span id="user-token"></span>
 
  
 </body>

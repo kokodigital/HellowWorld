@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.kokodigital.quizfactor"
+        id        = "com.kokodigital.vimto"
         versionCode="10" 
         version   = "1.0.0">
 	
-	<gap:plugin name="ChildBrowser" version="4.0.0" />
-	<gap:plugin name="GenericPush" />
-	<gap:plugin name="FacebookConnect">
-		<param name="APP_ID" value="628828893800003" />
-	</gap:plugin>
-	
 	<access origin="*" />
 	
-    <name>Quiz Factor</name>
+    <name>Vimto</name>
     <description>
-       Quiz Factor
+      Vimto
     </description>
     <author href="https://build.phonegap.com" email="support@phonegap.com">
        Koko Digital

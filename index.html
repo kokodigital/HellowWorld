@@ -1,272 +1,63 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-
-<title>Bounce 'n' Boom</title>
-
-<meta name="viewport" content="width=960" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<script src="phonegap.js"></script>
-
-<script src="src/jquery.min.js"></script>
-<script src="src/jquery.toc-1.1.4.min.js"></script>
-
-<script type="text/javascript" src="src/easeljs/events/EventDispatcher.js"></script>
-<script type="text/javascript" src="src/easeljs/utils/UID.js"></script>
-<script type="text/javascript" src="src/easeljs/geom/Matrix2D.js"></script>
-<script type="text/javascript" src="src/easeljs/display/DisplayObject.js"></script>
-<script type="text/javascript" src="src/easeljs/display/Container.js"></script>
-<script type="text/javascript" src="src/easeljs/display/Stage.js"></script>
-<script type="text/javascript" src="src/easeljs/events/MouseEvent.js"></script>
-<script type="text/javascript" src="src/easeljs/display/Shape.js"></script>
-<script type="text/javascript" src="src/easeljs/display/Graphics.js"></script>
-<script type="text/javascript" src="src/easeljs/geom/Rectangle.js"></script>
-<script type="text/javascript" src="src/easeljs/geom/Point.js"></script>
-<script type="text/javascript" src="src/easeljs/utils/Ticker.js"></script>
-<script type="text/javascript" src="src/easeljs/display/SpriteSheet.js"></script>
-<script type="text/javascript" src="src/easeljs/display/Bitmap.js"></script>
-<script type="text/javascript" src="src/easeljs/display/BitmapAnimation.js"></script>
-<script type="text/javascript" src="src/easeljs/display/Text.js"></script>
-<script type="text/javascript" src="src/easeljs/filters/Filter.js"></script>
-<script type="text/javascript" src="src/easeljs/filters/BoxBlurFilter.js"></script>
-<script type="text/javascript" src="src/easeljs/filters/ColorFilter.js"></script>
-<script type="text/javascript" src="src/easeljs/filters/ColorMatrixFilter.js"></script>
-<script type="text/javascript" src="src/easeljs/ui/Touch.js"></script>
-
-<script type="text/javascript" src="src/preloadjs/AbstractLoader.js"></script>
-<script type="text/javascript" src="src/preloadjs/LoadQueue.js"></script>
-<script type="text/javascript" src="src/preloadjs/TagLoader.js"></script>
-<script type="text/javascript" src="src/preloadjs/XHRLoader.js"></script>
-
-<script type="text/javascript" src="src/tweenjs/Tween.js"></script>
-<script type="text/javascript" src="src/tweenjs/Ease.js"></script>
-
-<script type="text/javascript" src="src/soundjs/Sound.js"></script>
-<script type="text/javascript" src="src/soundjs/WebAudioPlugin.js"></script>
-<script type="text/javascript" src="src/soundjs/HTMLAudioPlugin.js"></script>
-
-<!--views-->
-<script type="text/javascript" src="src/classes/views/BackgroundView.js"></script>
-<script type="text/javascript" src="src/classes/views/PreloaderView.js"></script>
-<script type="text/javascript" src="src/classes/views/MainMenuView.js"></script>
-<script type="text/javascript" src="src/classes/views/InGameView.js"></script>
-
-<script type="text/javascript" src="src/classes/objects/GameEngine.js"></script>
-<script type="text/javascript" src="src/classes/objects/BouncingCar.js"></script>
-
-<script type="text/javascript">
-var canvas;
-var stage;
-var assets;
-var views;
-
-function init() 
-{
-	//set canvas
-	canvas = document.getElementById("stage");
-	canvas.width = 960;
-	canvas.height = 640;
-	
-	//create stage
-	stage = new createjs.Stage(canvas);
-	stage.width = 960;
-	stage.height = 640;
-	
-	//enable touch (for mobile devices);
-	createjs.Touch.enable(stage);
-	
-	//resize
-	resize();
-	window.addEventListener("resize", resize );
-	window.addEventListener("orientationchange", resize );
-	
-	//setup views
-	views = new Array();
-	//initial views
-	views['background'] = BackgroundView;
-	views['preloader'] = PreloaderView;
-		//views
-		views['mainmenu'] = MainMenuView;
-		views['ingame'] = InGameView;
-	//init
-	views['background'].init();
-	views['preloader'].init();
-
-	var assetManifest = [
-		//background
-		{ id:'howtoplay_background', src: "assets/views/Background/howtoplay.jpg" },
-		{ id:'ingame_background', src: "assets/views/Background/ingame.jpg" },
-		{ id:'standard_background', src: "assets/views/Background/standard.jpg" },
-		
-		//ingame car
-		{ id:'car_blackberry', src: "assets/ingame/Car/blackberry.png" },
-		{ id:'car_blackberryLeftArm', src: "assets/ingame/Car/blackberryLeftArm.png" },
-		{ id:'car_blackberryRightArm', src: "assets/ingame/Car/blackberryRightArm.png" },
-		{ id:'car_grape', src: "assets/ingame/Car/grape.png" },
-		{ id:'car_grapeLeftArm', src: "assets/ingame/Car/grapeLeftArm.png" },
-		{ id:'car_grapeRightArm', src: "assets/ingame/Car/grapeRightArm.png" },
-		{ id:'car_raspberry', src: "assets/ingame/Car/raspberry.png" },
-		{ id:'car_raspberryLeftArm', src: "assets/ingame/Car/raspberryLeftArm.png" },
-		{ id:'car_raspberryRightArm', src: "assets/ingame/Car/raspberryRightArm.png" },
-		{ id:'car_front', src: "assets/ingame/Car/car_front.png" },
-		{ id:'car_hood', src: "assets/ingame/Car/car_hood.png" },
-		{ id:'car_windshield', src: "assets/ingame/Car/car_windshield.png" },
-		{ id:'car_windshield_tint', src: "assets/ingame/Car/car_windshield_tint.png" },
-		{ id:'car_wheel', src: "assets/ingame/Car/wheel.png" },
-		{ id:'car_underside', src: "assets/ingame/Car/carunderside.png" },
-		//ingame
-		{ id:'up_arrow', src: "assets/ingame/btn_up_arrow.png" },
-		{ id:'down_arrow', src: "assets/ingame/btn_down_arrow.png" },
-		{ id:'left_arrow', src: "assets/ingame/btn_left_arrow.png" },
-		{ id:'right_arrow', src: "assets/ingame/btn_right_arrow.png" },
-		//ingame
-		{ id:'seq_down', src: "assets/ingame/arrowDown.png" },
-		{ id:'seq_up', src: "assets/ingame/arrowUp.png" },
-		{ id:'seq_left', src: "assets/ingame/arrowLeft.png" },
-		{ id:'seq_right', src: "assets/ingame/arrowRight.png" },
-		{ id:'seq_correct', src: "assets/ingame/correct.png" },
-		{ id:'seq_incorrect', src: "assets/ingame/incorrect.png" },
-		//main menu
-		{ id:'bounce_logo', src: "assets/views/MainMenu/BounceNBoomLogo.png" },
-		{ id:'vimto_logo', src: "assets/views/MainMenu/VimtoLogo.png" },
-		{ id:'play_game_button', src: "assets/views/MainMenu/PlayGame.png" },
-		{ id:'highscore_button', src: "assets/views/MainMenu/HighScores.png" },
-		{ id:'navigation_post', src: "assets/views/MainMenu/NavigationPost.png" },
-		{ id:'mainmenu_car', src: "assets/views/MainMenu/car.png" },
-		
-		{id:'click', src: "assets/sounds/click.mp3|assets/sounds/click.ogg" },
-		{id:'boom', src: "assets/sounds/boom5.mp3|assets/sounds/boom5.ogg" }
-	];	
-	
-	
-	assets = new createjs.LoadQueue(true);
-	
-	assets.installPlugin(createjs.Sound);
-		
-	assets.onComplete = preloadAssetsComplete;
-	
-	assets.onError = function(e){
-		console.log(e);
-	}
-	assets.onProgress = views['preloader'].update;
-	
-	assets.loadManifest(assetManifest);
-	
-	//THE UPDATE
-	createjs.Ticker.setFPS(60);
-	createjs.Ticker.addEventListener("tick", handleTick);
+<script src="cordova-2.5.0.js"></script>
+<script src="childbrowser.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="cdv-plugin-fb-connect.js"></script>
+<script src="facebook-js-sdk.js"></script>
+<script src="js/auth.js"></script>
+<script src="PushNotification.js"></script>
+<script src="js/push.js"></script>
+<script>
+function launchBrowser() {
+try{
+window.plugins.childBrowser.showWebPage('http://www.kokodev.co.uk/qf/pushtest.php?did='+$('#regid').html(),
+{ showLocationBar: true });
+} catch(e){
+	console.log(e);
+}
 }
 
-function handleTick(event) 
-{
-	 stage.update();
-	 $("#fps").html(Math.round(createjs.Ticker.getMeasuredFPS(), 2)+"fps");
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+var pushNotification;
+pushNotification = window.plugins.pushNotification;
+
+if (device.platform == 'android' || device.platform == 'Android') {
+	pushNotification.register(successHandler, errorHandler,{"senderID":"325462494410","ecb":"onNotificationGCM"});
+} else {
+ //  pushNotification.register(tokenHandler, errorHandler {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
 }
 
-function resize()
-{
-	var targetStageScale = 960 / 640;
-	
-	var height = window.innerHeight;
-	var width = window.innerHeight * targetStageScale;
-	
-	if(canvas.height != height)
-	{
-		if(height > 640) {
-			height = 640;
-			width = 960;
-		}
-	
-		canvas.width = width;
-		canvas.height = height;
+
+ console.log('################ INT FB');
+
+  FB.init({
+    appId : '628828893800003',
+    nativeInterface : CDV.FB,
+    useCachedDialogs : false
+  });
+
+ FB.getLoginStatus(handleStatusChange);
+ authUser();
+}
+
 		
-		stage.scaleX = canvas.width/960;
-		stage.scaleY = canvas.height/640;
-	}
-	
-	var widthDiff = (window.innerWidth-canvas.width)/2;
-	$("#wrap").css({"margin-left" : widthDiff});
-		
-	var heightDiff = (window.innerHeight-canvas.height)/2;
-	$("#wrap").css({"margin-top" : heightDiff});
-}
-
-function preloadAssetsComplete() 
-{
-	//init all views to be able to use assets preloaded
-	views['mainmenu'].init();
-	views['ingame'].init();
-	
-	//hide preloader and change background
-	views['background'].preloadComplete();
-	views['preloader'].transitionOut();
-	
-	if(true){
-		//final
-		views['background'].changeBackground('standard_background');
-		views['mainmenu'].transitionIn();
-	}else{
-		//quickplay
-		views['background'].changeBackground('ingame_background');
-		views['ingame'].transitionIn();
-	}
-	
-	createjs.Sound.play("boom", createjs.Sound.INTERRUPT_ANY, 0, 0, -1, .3, 0);
-}
-
-function buildLayout( obj, container ) 
-{
-	var items = [];
-	//loop obj
-	for ( var i = 0; i < obj.length; i++)
-	{
-		var image = new createjs.Bitmap(assets.getResult(obj[i].id));
-		container.addChild(image);
-		if(obj[i].hasOwnProperty('x')){
-			image.x = obj[i].x;
-		}
-		if(obj[i].hasOwnProperty('y')){
-			image.y = obj[i].y;
-		}
-		if(obj[i].hasOwnProperty('visible')){
-			image.visible = obj[i].visible;
-		}
-		if(obj[i].hasOwnProperty('regX')){
-			image.regX = obj[i].regX;
-		}
-		if(obj[i].hasOwnProperty('regY')){
-			image.regY = obj[i].regY;
-		}
-		if(obj[i].hasOwnProperty('scaleX')){
-			image.scaleX = obj[i].scaleX;
-		}
-		if(obj[i].hasOwnProperty('scaleY')){
-			image.scaleY = obj[i].scaleY;
-		}
-		var name = obj[i].id;
-		if(obj[i].hasOwnProperty('name')){
-			name = obj[i].name;
-		}
-		items[ name ] = image;
-	}
-	//return images
-	return items;
-}
-$(init);
 </script>
-<style>
-	body{
-		padding:0px;
-		margin:0px;
-		background:#000;
-	}
-</style>
 </head>
 <body>
-	<div id="fps" style="position:absolute; top:0px;left:0px;background:#333; color:#FFF;font-weight:bold;padding:3px 5px;"></div>
-	<div id="wrap">
-		<canvas id="stage"></canvas>
-	</div>
+<div id="fb-root"></div>
+<h1>Plugin tests</h1>
+ 
+<a onClick="launchBrowser();" href="#">Child Browser</a><br/><br/>
+<a onClick="promptLogin();" href="#" id="fblogin" >Facebook Login</a><br/><br/>
+<a onClick="logout();" href="#" id="fbloginout" style="display:none" >Facebook Logout</a><br/><br/>
+<img id="user-picture" /><br /><span id="user-name"></span><br /><span id="user-token"></span>
+<ul id="app-status-ul"></ul>
+<div id="regid" style="display:none"></div>
+ 
 </body>
+
 </html>

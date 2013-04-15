@@ -31,27 +31,27 @@ function handleStatusChange(session) {
         function(response) {
           if (!response.error) {
             user = response;
-    	 	document.getElementById('fblogin').style.display = 'none';
-    	    document.getElementById('fbloginout').style.display ='inline';
+    	 	$('#fblogin').css('display','none');
+    	    $('#fbloginout').css('display','inline');
             
             console.log('Got the user\'s name and picture: ' + JSON.stringify(response));
             
           //Update display of user name and picture
-            if (document.getElementById('user-name')) {
-              document.getElementById('user-name').innerHTML = user.name;
+            if ($('#user-name')) {
+              $('#user-name').html(user.name);
             }
-            if (document.getElementById('user-picture')) {
-              document.getElementById('user-picture').src = user.picture.data.url;
+            if ($('#user-picture')) {
+              $('#user-picture').attr('src',user.picture.data.url);
             }
             
             if(token){
-            	document.getElementById('user-token').innerHTML = token;
+            	$('#user-token').html(token);
             }
             
 		
           } else {
-        	  document.getElementById('fblogin').style.display = 'inline';
-              document.getElementById('fbloginout').style.display ='none';
+        		$('#fblogin').css('display','inline');
+        	    $('#fbloginout').css('display','none');
             console.log('Error getting user info: ' + JSON.stringify(response.error));
             // Check for errors due to app being unininstalled
 
@@ -66,8 +66,8 @@ function handleStatusChange(session) {
         });
     }
     else  {
-    	 	document.getElementById('fblogin').style.display = 'inline';
-    	    document.getElementById('fbloginout').style.display ='none';
+    	$('#fblogin').css('display','inline');
+	    $('#fbloginout').css('display','none');
     }
 }
 
@@ -81,14 +81,14 @@ function checkUserPermissions(permissionToCheck) {
       if (document.body.className != 'not_connected') {
           for (var i = 0; i < permissions.length; i++) {
             var perm = permissions[i];
-            var enabledElementName = document.getElementById('enabled_perm_' + perm);
-            var disabledElementName = document.getElementById('disabled_perm_' + perm);
+            var enabledElementName = $('#enabled_perm_' + perm);
+            var disabledElementName = $('#disabled_perm_' + perm);
             if (response.data[0][perm] == 1) {
-              enabledElementName.style.display = 'block';
-              disabledElementName.style.display = 'none';
+              enabledElementName.css(display,'block');
+              disabledElementName.css(display,'none');
             } else {
-              enabledElementName.style.display = 'none';
-              disabledElementName.style.display = 'block';
+              enabledElementName.css(display,'none');
+              disabledElementName.css(display,'block');
             }
           }
           if (permissionToCheck) {
@@ -108,7 +108,6 @@ function checkUserPermissions(permissionToCheck) {
 
 //Prompt the user to login and ask for the 'email' permission
 function promptLogin() {
-	console.log('asdasd');
 try {	
   FB.login(null, {scope: 'email'});
   } catch(e){

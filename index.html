@@ -19,16 +19,31 @@ window.plugins.childBrowser.showWebPage('http://www.kokodev.co.uk/qf/pushtest.ph
 }
 }
 
+
+function launchPush() {
+try{
+var pushNotificationbb;
+pushNotificationbb = window.plugins.pushNotification;
+
+  pushNotificationbb.register(tokenHandler, errorHandler {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
+} catch(e){
+	console.log(e);
+}
+}
+
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 var pushNotification;
 pushNotification = window.plugins.pushNotification;
-
+console.log('1');
+console.log(pushNotification);
 if (device.platform == 'android' || device.platform == 'Android') {
 	pushNotification.register(successHandler, errorHandler,{"senderID":"325462494410","ecb":"onNotificationGCM"});
 } else {
   pushNotification.register(tokenHandler, errorHandler {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
+  console.log('2');
+
 }
 
 
@@ -57,7 +72,7 @@ if (device.platform == 'android' || device.platform == 'Android') {
 <img id="user-picture" /><br /><span id="user-name"></span><br /><span id="user-token"></span>
 <ul id="app-status-ul"></ul>
 <div id="regid" style="display:none"></div>
- 
+ <a onClick="launchPush();" href="#">push test/a><br/><br/>
 </body>
 
 </html>

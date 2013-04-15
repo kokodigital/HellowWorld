@@ -29,9 +29,9 @@ try {
 	console.log('1');
 	console.log(pushNotification);
 	if (device.platform == 'android' || device.platform == 'Android') {
-		pushNotification.register(successHandler, errorHandler,{"senderID":"325462494410","ecb":"onNotificationGCM"});
+		//pushNotification.register(successHandler, errorHandler,{"senderID":"325462494410","ecb":"onNotificationGCM"});
 	} else {
-	  pushNotification.register(tokenHandler, errorHandler {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
+	//  pushNotification.register(tokenHandler, errorHandler {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
 	  console.log('2');
 	}
 	catch(err) { 

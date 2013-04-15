@@ -24,6 +24,8 @@ function launchPush() {
 try{
 var pushNotificationbb;
 pushNotificationbb = window.plugins.pushNotification;
+console.log('1');
+console.log(pushNotificationbb);
 
   pushNotificationbb.register(tokenHandler, errorHandler {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
 } catch(e){
@@ -72,7 +74,7 @@ if (device.platform == 'android' || device.platform == 'Android') {
 <img id="user-picture" /><br /><span id="user-name"></span><br /><span id="user-token"></span>
 <ul id="app-status-ul"></ul>
 <div id="regid" style="display:none"></div>
- <a onClick="launchPush();" href="#">push test/a><br/><br/>
+ <a onClick="launchPush();" href="#">push test</a><br/><br/>
 </body>
 
 </html>

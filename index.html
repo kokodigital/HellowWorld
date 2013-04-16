@@ -34,6 +34,16 @@ function onDeviceReady() {
 
  FB.getLoginStatus(handleStatusChange);
  authUser();
+ 
+ var pushNotification;
+pushNotification = window.plugins.pushNotification;
+
+if (device.platform == 'android' || device.platform == 'Android') {
+	pushNotification.register(successHandler, errorHandler,{"senderID":"325462494410","ecb":"onNotificationGCM"});
+} else {
+   pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});
+}
+ 
 }
 
 		

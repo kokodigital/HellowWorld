@@ -18,6 +18,7 @@ function tokenHandler (result) {
 
 
 function onNotificationAPN(event) {
+ 	pushNotification = window.plugins.pushNotification;
     if (event.alert) {
         navigator.notification.alert(event.alert);
     }

@@ -1,67 +1,85 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<script src="cordova-2.5.0.js"></script>
-<script src="childbrowser.js"></script>
-<script src="PushNotification.js"></script>
-<script src="cdv-plugin-fb-connect.js"></script>
-<script src="facebook-js-sdk.js"></script>
-<script src="js/zepto.min.js"></script>
-<script src="js/auth.js"></script>
-<script src="js/push.js"></script>
-<script>
-function launchBrowser() {
-try{
-window.plugins.childBrowser.showWebPage('http://www.kokodev.co.uk/qf/pushtest.php?did='+$('#regid').html(),
-{ showLocationBar: true });
-} catch(e){
-	console.log(e);
-}
-}
-
-
-document.addEventListener("deviceready", onDeviceReady, false);
-
-function onDeviceReady() {
-
- console.log('################ INT FB');
-
-  FB.init({
-    appId : '628828893800003',
-    nativeInterface : CDV.FB,
-    useCachedDialogs : false
-  });
-
- FB.getLoginStatus(handleStatusChange);
- authUser();
- 
- var pushNotification;
-pushNotification = window.plugins.pushNotification;
-
-if (device.platform == 'android' || device.platform == 'Android') {
-	pushNotification.register(successHandler, errorHandler,{"senderID":"325462494410","ecb":"onNotificationGCM"});
-	
-} else {
-   pushNotification.register(tokenHandler, errorHandler, {"badge":"true","ecb":"onNotificationAPN"});
-          
-}
- 
-}
-
-		
-</script>
-</head>
-<body>
-<div id="fb-root"></div>
-<h1>Plugin tests 777777</h1>
- 
-<a onClick="launchBrowser();" href="#">Child Browser</a><br/><br/>
-<a onClick="promptLogin();" href="#" id="fblogin" >Facebook Login</a><br/><br/>
-<a onClick="logout();" href="#" id="fbloginout" style="display:none" >Facebook Logout</a><br/><br/>
-<img id="user-picture" /><br /><span id="user-name"></span><br /><span id="user-token"></span>
-<ul id="app-status-ul"></ul>
-<div id="regid" style="display:none"></div>
-<br/><br/>
-</body>
-
+    <head>
+        <script src="cordova-2.5.0.js"></script>
+        <script src="childbrowser.js"></script>
+        <script src="cdv-plugin-fb-connect.js"></script>
+        <script src="facebook-js-sdk.js"></script>
+        <script src="PushNotification.js"></script>
+        <script src="js/zepto.min.js"></script>
+        <script src="js/auth.js"></script>
+        <script src="js/push.js"></script>
+        
+        <script>
+            function launchBrowser() {
+                try{
+                    if (device.platform == 'android' || device.platform == 'Android') {
+                        window.plugins.childBrowser.showWebPage('http://www.kokodev.co.uk/qf/pushtest.php?did='+$('#regid').html(),
+                                                            { showLocationBar: true });
+                    }else{
+                        window.plugins.childBrowser.showWebPage('http://www.kokodev.co.uk/qf/pushapple.php?did='+$('#regid').html(),
+                                                                { showLocationBar: true });
+                        
+                    }
+                } catch(e){
+                    console.log(e);
+                }
+            }
+            
+            document.addEventListener("deviceready", onDeviceReady, false);
+            
+            function onDeviceReady() {
+                
+            
+                console.log('################ INT FB');
+                
+                FB.init({
+                        appId : '628828893800003',
+                        nativeInterface : CDV.FB,
+                        useCachedDialogs : false
+                        });
+                
+                FB.getLoginStatus(handleStatusChange);
+                authUser();
+              
+                try
+                {
+                    pushNotification = window.plugins.pushNotification;
+                    if (device.platform == 'android' || device.platform == 'Android') {
+                        $("#app-status-ul").append('<li>registering android</li>');
+                        pushNotification.register(successHandler, errorHandler, {"senderID":"325462494410","ecb":"onNotificationGCM"});	// required!
+                    } else {
+                        $("#app-status-ul").append('<li>registering iOS</li>');
+                        pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});	// required!
+                    }
+                }
+                catch(err)
+                {
+                    txt="There was an error on this page.\n\n";
+                    txt+="Error description: " + err.message + "\n\n";
+                    alert(txt);
+                }
+            
+                 
+                
+            }
+            
+            
+            </script>
+    </head>
+    <body>
+        
+        <div id="fb-root"></div>
+        <h1>Plugin tests</h1>
+        
+        <a onClick="launchBrowser();" href="#">Child Browser</a><br/><br/>
+        <a onClick="promptLogin();" href="#" id="fblogin" >Facebook Login</a><br/><br/>
+        <a onClick="logout();" href="#" id="fbloginout" style="display:none" >Facebook Logout</a><br/><br/>
+        <img id="user-picture" /><br /><span id="user-name"></span><br /><span id="user-token"></span>
+        <ul id="app-status-ul"></ul>
+        <div id="regid" style="display:none"></div>
+    
+        
+    </body>
+    
 </html>

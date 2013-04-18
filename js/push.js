@@ -1,24 +1,24 @@
 // result contains any message sent from the plugin call
 function successHandler (result) {
-	$("#app-status-ul").append('<li>result = ' + result + '</li>');
+	$("#app-status-ul").append('<li>result = '+result+ '</li>');
 }
 
 // result contains any error description text returned from the plugin call
 function errorHandler (error) {
-	$("#app-status-ul").append('<li>error = ' + error + '</li>');
+	$("#app-status-ul").append('<li>error = '+error+ '</li>');
 }
 
 
 function tokenHandler (result) {
     // Your iOS push server needs to know the token before it can push to this device
     // here is where you might want to send it the token for later use.
-     $("#app-status-ul").append('<li>device token = ' + result + '</li>');
+     $("#app-status-ul").append('<li>device token = '+result+ '</li>');
+     $('#regid').html(result);
 }
 
 
 
 function onNotificationAPN(event) {
- 	pushNotification = window.plugins.pushNotification;
     if (event.alert) {
         navigator.notification.alert(event.alert);
     }
@@ -43,7 +43,7 @@ function onNotificationAPN(event) {
                 case 'registered':
                 if ( e.regid.length > 0 )
                 {
-                    $("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + '</li>');
+                    $("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
                     // Your GCM push server needs to know the regID before it can push to this device
                     // here is where you might want to send it the regID for later use.
                     console.log("regID = " + e.regid);
